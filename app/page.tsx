@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { getFactByDate, getRandomFact, Language } from '../src/utils/facts';
 import { useTranslation } from '../src/i18n/translations';
+import { getCurrentLanguage } from '../src/utils/language';
 
 type Fact = {
   text: string;
@@ -61,20 +62,8 @@ export default function Home() {
     const localDate = `${yyyy}-${mm}-${dd}`;
     setCurrentDate(localDate);
     
-    // 檢測瀏覽器語言，預設為繁體中文
-    const browserLang = navigator.language;
-    let defaultLang: Language = 'zh-TW';
-    
-    if (browserLang.startsWith('zh')) {
-      defaultLang = browserLang.includes('CN') ? 'zh-CN' : 'zh-TW';
-    } else if (browserLang.startsWith('en')) {
-      defaultLang = 'en';
-    } else if (browserLang.startsWith('ja')) {
-      defaultLang = 'ja';
-    } else if (browserLang.startsWith('ko')) {
-      defaultLang = 'ko';
-    }
-    
+    // 使用新的語言檢測函數
+    const defaultLang = getCurrentLanguage();
     setCurrentLanguage(defaultLang);
     setIsRandom(false);
     fetchFact(localDate, defaultLang, false);
@@ -121,6 +110,11 @@ export default function Home() {
 
   const handleLanguageChange = (newLang: Language) => {
     setCurrentLanguage(newLang);
+    // 儲存語言偏好到 localStorage
+    localStorage.setItem('preferred-language', newLang);
+    // 觸發語言變更事件
+    window.dispatchEvent(new CustomEvent('languageChanged'));
+    
     if (currentDate) {
       if (isRandom) {
         fetchFact(currentDate, newLang, true);
