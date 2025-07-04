@@ -1,0 +1,22 @@
+{
+  "name": "每日冷知識 Daily Fact",
+  "short_name": "每日冷知識",
+  "description": "每天一則冷知識，支援多語言，讓你每天都學到一點點有趣的事！",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fdf6e3",
+  "background_color": "#fdf6e3",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+} 

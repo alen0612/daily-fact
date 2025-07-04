@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { getFactByDate, getRandomFact, Language } from '../src/utils/facts';
 import { useTranslation } from '../src/i18n/translations';
+import { getCurrentLanguage } from '../src/utils/language';
 
 type Fact = {
   text: string;
@@ -61,20 +62,8 @@ export default function Home() {
     const localDate = `${yyyy}-${mm}-${dd}`;
     setCurrentDate(localDate);
     
-    // 檢測瀏覽器語言，預設為繁體中文
-    const browserLang = navigator.language;
-    let defaultLang: Language = 'zh-TW';
-    
-    if (browserLang.startsWith('zh')) {
-      defaultLang = browserLang.includes('CN') ? 'zh-CN' : 'zh-TW';
-    } else if (browserLang.startsWith('en')) {
-      defaultLang = 'en';
-    } else if (browserLang.startsWith('ja')) {
-      defaultLang = 'ja';
-    } else if (browserLang.startsWith('ko')) {
-      defaultLang = 'ko';
-    }
-    
+    // 使用新的語言檢測函數
+    const defaultLang = getCurrentLanguage();
     setCurrentLanguage(defaultLang);
     setIsRandom(false);
     fetchFact(localDate, defaultLang, false);
@@ -121,6 +110,11 @@ export default function Home() {
 
   const handleLanguageChange = (newLang: Language) => {
     setCurrentLanguage(newLang);
+    // 儲存語言偏好到 localStorage
+    localStorage.setItem('preferred-language', newLang);
+    // 觸發語言變更事件
+    window.dispatchEvent(new CustomEvent('languageChanged'));
+    
     if (currentDate) {
       if (isRandom) {
         fetchFact(currentDate, newLang, true);
@@ -169,12 +163,10 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 relative">
           <div className="text-center">
-            <h1 className="inline-block">
-              <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
-                <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
-                <span className="mx-2">{t('subtitle')}</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
-              </span>
+            <h1 className="font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
+              <span className="mx-2">{t('subtitle')}</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
             </h1>
             <p className="font-mono font-semibold text-blue-100 text-xs sm:text-sm lg:text-base mt-3 sm:mt-4 tracking-wide drop-shadow-md">
               🎯 {t('tagline')} 🎯
