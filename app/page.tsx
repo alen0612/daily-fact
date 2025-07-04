@@ -11,6 +11,7 @@ export default function Home() {
   const [fact, setFact] = useState<Fact | null>(null);
   const [currentDate, setCurrentDate] = useState<string>('');
   const [timeUntilMidnight, setTimeUntilMidnight] = useState<string>('');
+  const [showShareToast, setShowShareToast] = useState<boolean>(false);
 
   useEffect(() => {
     const date = new Date();
@@ -61,6 +62,24 @@ export default function Home() {
     });
   };
 
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setShowShareToast(true);
+      setTimeout(() => setShowShareToast(false), 3000);
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = window.location.href;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setShowShareToast(true);
+      setTimeout(() => setShowShareToast(false), 3000);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header Section */}
@@ -77,9 +96,11 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 relative">
           <div className="text-center">
-            <h1 className="group cursor-pointer inline-block transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/20">
+            <h1 className="inline-block">
               <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
-                📘 DAILY FACT ⭐️
+                <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
+                <span className="mx-2">DAILY FACT</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
               </span>
               <br />
               <span className="inline-block font-mono font-black text-xl sm:text-2xl lg:text-3xl tracking-wider drop-shadow-lg">
@@ -111,17 +132,31 @@ export default function Home() {
         <div className="grid gap-6 sm:gap-8 lg:gap-10">
           
           {/* Date and Metadata Row */}
-          <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <section className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-2xl shadow-lg border-2 border-white/20 p-4 sm:p-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm sm:text-base text-gray-600">
-                  {currentDate && formatDate(currentDate)}
-                </span>
+                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                  <span className="text-lg sm:text-xl">📅</span>
+                </div>
+                <div className="text-white">
+                  <div className="font-mono font-bold text-sm sm:text-base">
+                    {currentDate && formatDate(currentDate)}
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/80 font-medium">
+                    Today&apos;s Special Fact
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-xs sm:text-sm text-gray-500">
-                <span>📅 今日更新</span>
-                <span>🌐 多語言支援</span>
+              
+              {/* Language Selector */}
+              <div className="flex items-center gap-2">
+                <span className="text-white/80 text-xs sm:text-sm font-medium">🌐</span>
+                <select className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-white text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-white/50">
+                  <option value="zh-TW" className="text-gray-800">繁體中文</option>
+                  <option value="en" className="text-gray-800">English</option>
+                  <option value="ja" className="text-gray-800">日本語</option>
+                  <option value="ko" className="text-gray-800">한국어</option>
+                </select>
               </div>
             </div>
           </section>
@@ -240,26 +275,28 @@ export default function Home() {
 
           {/* Action Buttons */}
           <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              {/* Comments Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">💬</span>
-                <span>Comments</span>
-              </button>
-              
-              {/* Bookmark Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl hover:from-yellow-600 hover:to-orange-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">🔖</span>
-                <span>Bookmark</span>
-              </button>
-              
+            <div className="flex justify-center">
               {/* Share Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:from-green-600 hover:to-emerald-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <button 
+                onClick={handleShare}
+                className="group flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:from-green-600 hover:to-emerald-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base font-medium animate-fade-in-up" 
+                style={{ animationDelay: '0.4s' }}
+              >
                 <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">📤</span>
                 <span>Share</span>
               </button>
             </div>
           </section>
+
+          {/* Share Toast */}
+          {showShareToast && (
+            <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in-up">
+              <div className="flex items-center gap-2">
+                <span>✅</span>
+                <span className="text-sm font-medium">連結已複製到剪貼簿！</span>
+              </div>
+            </div>
+          )}
 
         </div>
       </main>
