@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { getFactByDate, getRandomFact, Language } from '../src/utils/facts';
+import { useTranslation } from '../src/i18n/translations';
 
 type Fact = {
   text: string;
@@ -20,14 +21,6 @@ const fallbackMessages: Record<Language, string> = {
   'ko': '오늘의 냉지식이 아직 없습니다, 내일 다시 와주세요!'
 };
 
-const changeFactButtonText: Record<Language, string> = {
-  'zh-TW': '換一則冷知識',
-  'zh-CN': '换一则冷知识',
-  'en': 'Another Fact',
-  'ja': '別の冷知識',
-  'ko': '다른 냉지식'
-};
-
 export default function Home() {
   const [fact, setFact] = useState<Fact | null>(null);
   const [currentDate, setCurrentDate] = useState<string>('');
@@ -36,6 +29,8 @@ export default function Home() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('zh-TW');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isRandom, setIsRandom] = useState<boolean>(false);
+
+  const { t } = useTranslation(currentLanguage);
 
   const fetchFact = async (date: string, lang: Language, random = false) => {
     setIsLoading(true);
@@ -108,12 +103,20 @@ export default function Home() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('zh-TW', {
+    const localeMap: Record<Language, string> = {
+      'zh-TW': 'zh-TW',
+      'zh-CN': 'zh-CN',
+      'en': 'en-US',
+      'ja': 'ja-JP',
+      'ko': 'ko-KR'
+    };
+    
+    return new Intl.DateTimeFormat(localeMap[currentLanguage], {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
       weekday: 'long'
-    });
+    }).format(date);
   };
 
   const handleLanguageChange = (newLang: Language) => {
@@ -169,16 +172,16 @@ export default function Home() {
             <h1 className="inline-block">
               <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
                 <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
-                <span className="mx-2">DAILY FACT</span>
+                <span className="mx-2">{t('title')}</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
               </span>
               <br />
               <span className="inline-block font-mono font-black text-xl sm:text-2xl lg:text-3xl tracking-wider drop-shadow-lg">
-                🌍 每日冷知識 🎮
+                🌍 {t('subtitle')} 🎮
               </span>
             </h1>
             <p className="font-mono font-semibold text-blue-100 text-xs sm:text-sm lg:text-base mt-3 sm:mt-4 tracking-wide drop-shadow-md">
-              🎯 每天一則冷知識，讓生活更有趣 🎯
+              🎯 {t('tagline')} 🎯
             </p>
           </div>
         </div>
@@ -190,7 +193,7 @@ export default function Home() {
           <div className="bg-yellow-200 border-2 border-dashed border-yellow-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
               <p className="text-sm sm:text-base lg:text-lg font-medium text-yellow-800">
-                這裡是頂部廣告區塊
+                {t('topAdZone')}
               </p>
             </div>
           </div>
@@ -223,11 +226,11 @@ export default function Home() {
                   onChange={(e) => handleLanguageChange(e.target.value as Language)}
                   className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-white text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
-                  <option value="zh-TW" className="text-gray-800">繁體中文</option>
-                  <option value="zh-CN" className="text-gray-800">简体中文</option>
-                  <option value="en" className="text-gray-800">English</option>
-                  <option value="ja" className="text-gray-800">日本語</option>
-                  <option value="ko" className="text-gray-800">한국어</option>
+                  <option value="zh-TW" className="text-gray-800">{t('languages.zh-TW')}</option>
+                  <option value="zh-CN" className="text-gray-800">{t('languages.zh-CN')}</option>
+                  <option value="en" className="text-gray-800">{t('languages.en')}</option>
+                  <option value="ja" className="text-gray-800">{t('languages.ja')}</option>
+                  <option value="ko" className="text-gray-800">{t('languages.ko')}</option>
                 </select>
               </div>
             </div>
@@ -241,7 +244,7 @@ export default function Home() {
               style={{ animationDelay: '0.2s' }}
             >
               <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">🔄</span>
-              <span>{changeFactButtonText[currentLanguage]}</span>
+              <span>{t('changeFact')}</span>
             </button>
           </section>
 
@@ -253,7 +256,7 @@ export default function Home() {
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
                     <p className="font-mono text-base sm:text-lg lg:text-xl text-gray-600">
-                      載入中...
+                      {t('loading')}
                     </p>
                   </div>
                 </div>
@@ -271,7 +274,7 @@ export default function Home() {
                       {fact.error && fact.notFound ? '📭' : '📖'}
                     </span>
                     <h2 className="font-mono font-bold text-sm sm:text-base lg:text-lg tracking-wide uppercase">
-                      {fact.error && fact.notFound ? 'No Fact Today' : 'Today\'s Fact'}
+                      {fact.error && fact.notFound ? t('noFactTodayHeader') : t('todayFact')}
                     </h2>
                     <span className="text-lg sm:text-xl lg:text-2xl">
                       {fact.error && fact.notFound ? '😊' : '✨'}
@@ -300,7 +303,7 @@ export default function Home() {
                       <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg">
                         <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
                           <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
-                            這裡是內容中廣告區塊
+                            {t('middleAdZone')}
                           </p>
                         </div>
                       </div>
@@ -337,19 +340,19 @@ export default function Home() {
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="text-2xl sm:text-3xl lg:text-4xl animate-bounce">🌙</span>
                 <h2 className="font-mono font-bold text-xl sm:text-2xl lg:text-3xl tracking-wide">
-                  See you tomorrow!
+                  {t('seeYouTomorrow')}
                 </h2>
                 <span className="text-2xl sm:text-3xl lg:text-4xl animate-pulse">⏰</span>
               </div>
               
               <p className="text-pink-100 text-sm sm:text-base lg:text-lg mb-6 font-medium">
-                明天還會有新的冷知識等著你，記得回來看看喔！
+                {t('tomorrowMessage')}
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
                   <div className="text-center">
-                    <p className="text-xs sm:text-sm text-pink-100 mb-1">距離明天還有</p>
+                    <p className="text-xs sm:text-sm text-pink-100 mb-1">{t('timeUntilTomorrow')}</p>
                     <div className="font-mono font-bold text-lg sm:text-xl lg:text-2xl text-white tracking-wider">
                       {timeUntilMidnight}
                     </div>
@@ -359,7 +362,7 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <span className="text-lg sm:text-xl">🎯</span>
                   <span className="text-sm sm:text-base text-pink-100 font-medium">
-                    準時更新
+                    {t('onTimeUpdate')}
                   </span>
                 </div>
               </div>
@@ -376,7 +379,7 @@ export default function Home() {
                 style={{ animationDelay: '0.4s' }}
               >
                 <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">📤</span>
-                <span>Share</span>
+                <span>{t('share')}</span>
               </button>
             </div>
           </section>
@@ -386,7 +389,7 @@ export default function Home() {
             <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in-up">
               <div className="flex items-center gap-2">
                 <span>✅</span>
-                <span className="text-sm font-medium">連結已複製到剪貼簿！</span>
+                <span className="text-sm font-medium">{t('shareSuccess')}</span>
               </div>
             </div>
           )}
@@ -400,7 +403,7 @@ export default function Home() {
           <div className="bg-purple-200 border-2 border-dashed border-purple-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
               <p className="text-sm sm:text-base lg:text-lg font-medium text-purple-800">
-                這裡是底部廣告區塊
+                {t('bottomAdZone')}
               </p>
             </div>
           </div>
@@ -412,10 +415,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="text-center">
             <p className="text-sm sm:text-base text-gray-300 mb-2">
-              © 2024 每日冷知識. 保留所有權利.
+              {t('copyright')}
             </p>
             <p className="text-xs sm:text-sm text-gray-400">
-              讓每一天都充滿驚喜與新知
+              {t('footerTagline')}
             </p>
           </div>
         </div>
