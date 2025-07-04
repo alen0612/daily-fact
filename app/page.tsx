@@ -240,18 +240,23 @@ export default function Home() {
 
           {/* Action Buttons */}
           <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base">
-                <span>💬</span>
-                <span>留言</span>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+              {/* Comments Button */}
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">💬</span>
+                <span>Comments</span>
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors text-sm sm:text-base">
-                <span>🔖</span>
-                <span>收藏</span>
+              
+              {/* Bookmark Button */}
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl hover:from-yellow-600 hover:to-orange-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">🔖</span>
+                <span>Bookmark</span>
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base">
-                <span>📤</span>
-                <span>分享</span>
+              
+              {/* Share Button */}
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:from-green-600 hover:to-emerald-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">📤</span>
+                <span>Share</span>
               </button>
             </div>
           </section>
