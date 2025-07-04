@@ -105,30 +105,66 @@ export default function Home() {
           </section>
 
           {/* Main Fact Card */}
-          <section className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+          <section className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-400/20">
             {fact ? (
-              <div className="p-6 sm:p-8 lg:p-10">
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-gray-800 mb-6">
-                    {fact.text}
-                  </p>
-                  
-                  {/* Middle Ad Zone */}
-                  <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg my-6 sm:my-8">
-                    <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
-                      <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
-                        這裡是內容中廣告區塊
+              <div className="flex flex-col">
+                {/* Card Header */}
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="text-lg sm:text-xl lg:text-2xl">📖</span>
+                    <h2 className="font-mono font-bold text-sm sm:text-base lg:text-lg tracking-wide uppercase">
+                      Today&apos;s Fact
+                    </h2>
+                    <span className="text-lg sm:text-xl lg:text-2xl">✨</span>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <div className="space-y-6">
+                    {/* Fact Text */}
+                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6 border border-gray-100">
+                      <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800">
+                        {fact.text}
                       </p>
+                    </div>
+                    
+                    {/* Middle Ad Zone */}
+                    <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg">
+                      <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
+                        <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
+                          這裡是內容中廣告區塊
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Source Attribution */}
+                    {fact.source && (
+                      <div className="pt-4 border-t border-gray-100">
+                        <p className="font-mono text-xs sm:text-sm text-gray-500 italic text-center">
+                          — {fact.source}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Collectible Fact Card Placeholder */}
+                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="text-sm sm:text-base lg:text-lg">🎴</span>
+                    <span className="font-mono font-semibold text-xs sm:text-sm lg:text-base text-gray-700">
+                      Collectible Fact Card
+                    </span>
+                    <span className="text-sm sm:text-base lg:text-lg">🎴</span>
+                  </div>
+                  <div className="mt-2 flex justify-center">
+                    <div className="bg-white rounded-lg border border-gray-200 px-3 py-1">
+                      <span className="font-mono text-xs sm:text-xs text-gray-500">
+                        #001 • {currentDate}
+                      </span>
                     </div>
                   </div>
-                  
-                  {fact.source && (
-                    <div className="mt-6 pt-4 border-t border-gray-100">
-                      <p className="text-sm sm:text-base text-gray-500 italic">
-                        — {fact.source}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
             ) : (
@@ -136,7 +172,7 @@ export default function Home() {
                 <div className="flex justify-center items-center h-48 sm:h-56 lg:h-64">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-600">
+                    <p className="font-mono text-base sm:text-lg lg:text-xl text-gray-600">
                       載入中...
                     </p>
                   </div>
