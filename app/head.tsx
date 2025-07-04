@@ -65,6 +65,20 @@ export default function Head() {
       <meta name="description" content={metadata.description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       
+      {/* Favicon 設定 */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* 應用程式設定 */}
+      <meta name="application-name" content={metadata.siteName} />
+      <meta name="theme-color" content="#fdf6e3" />
+      <meta name="msapplication-TileColor" content="#fdf6e3" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
       {/* 基本 SEO */}
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Alen" />
@@ -105,9 +119,7 @@ export default function Head() {
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:secure_url" content={getImageUrl()} />
 
-      {/* 額外的社交媒體優化 */}
-      <meta name="theme-color" content="#8B5CF6" />
-      <meta name="msapplication-TileColor" content="#8B5CF6" />
+      {/* Apple 行動裝置優化 */}
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="apple-mobile-web-app-title" content={metadata.siteName} />
