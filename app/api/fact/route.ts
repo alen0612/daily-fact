@@ -4,8 +4,12 @@ import facts from '@/data/facts.json';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
-  const date = searchParams.get('date') || new Date().toISOString().split('T')[0];
+  const date = searchParams.get('date');
   const lang = searchParams.get('lang') || 'zh-TW';
+
+  if (!date) {
+    return NextResponse.json({ text: '請提供日期參數（YYYY-MM-DD）' });
+  }
 
   const fact = facts.find((f) => f.date === date);
 
