@@ -10,6 +10,7 @@ type Fact = {
 export default function Home() {
   const [fact, setFact] = useState<Fact | null>(null);
   const [currentDate, setCurrentDate] = useState<string>('');
+  const [timeUntilMidnight, setTimeUntilMidnight] = useState<string>('');
 
   useEffect(() => {
     const date = new Date();
@@ -27,6 +28,27 @@ export default function Home() {
       .catch(() => {
         setFact({ text: '無法取得今日冷知識 😢' });
       });
+  }, []);
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date();
+      const tomorrow = new Date(now);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow.setHours(0, 0, 0, 0);
+      
+      const diff = tomorrow.getTime() - now.getTime();
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      setTimeUntilMidnight(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const formatDate = (dateString: string) => {
@@ -182,14 +204,37 @@ export default function Home() {
           </section>
 
           {/* See You Tomorrow Section */}
-          <section className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200 p-6 sm:p-8">
-            <div className="text-center">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-3">
-                👋 明天見！
-              </h2>
-              <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
+          <section className="bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-xl border border-purple-300 p-6 sm:p-8 lg:p-10 transform transition-all duration-700 animate-fade-in-up">
+            <div className="text-center text-white">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="text-2xl sm:text-3xl lg:text-4xl animate-bounce">🌙</span>
+                <h2 className="font-mono font-bold text-xl sm:text-2xl lg:text-3xl tracking-wide">
+                  See you tomorrow!
+                </h2>
+                <span className="text-2xl sm:text-3xl lg:text-4xl animate-pulse">⏰</span>
+              </div>
+              
+              <p className="text-pink-100 text-sm sm:text-base lg:text-lg mb-6 font-medium">
                 明天還會有新的冷知識等著你，記得回來看看喔！
               </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 border border-white/30">
+                  <div className="text-center">
+                    <p className="text-xs sm:text-sm text-pink-100 mb-1">距離明天還有</p>
+                    <div className="font-mono font-bold text-lg sm:text-xl lg:text-2xl text-white tracking-wider">
+                      {timeUntilMidnight}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <span className="text-lg sm:text-xl">🎯</span>
+                  <span className="text-sm sm:text-base text-pink-100 font-medium">
+                    準時更新
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
 
