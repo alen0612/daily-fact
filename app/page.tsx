@@ -172,12 +172,8 @@ export default function Home() {
             <h1 className="inline-block">
               <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
                 <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
-                <span className="mx-2">{t('title')}</span>
+                <span className="mx-2">{t('subtitle')}</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
-              </span>
-              <br />
-              <span className="inline-block font-mono font-black text-xl sm:text-2xl lg:text-3xl tracking-wider drop-shadow-lg">
-                🌍 {t('subtitle')} 🎮
               </span>
             </h1>
             <p className="font-mono font-semibold text-blue-100 text-xs sm:text-sm lg:text-base mt-3 sm:mt-4 tracking-wide drop-shadow-md">
