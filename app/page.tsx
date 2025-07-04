@@ -7,11 +7,43 @@ type Fact = {
   source?: string;
 };
 
+type Language = 'zh-TW' | 'zh-CN' | 'en' | 'ja' | 'ko';
+
+
+
+const noFactMessages: Record<Language, string> = {
+  'zh-TW': '尚無今日冷知識',
+  'zh-CN': '暂无今日冷知识',
+  'en': 'No fact for today',
+  'ja': '今日の冷知識はありません',
+  'ko': '오늘의 냉지식이 없습니다'
+};
+
 export default function Home() {
   const [fact, setFact] = useState<Fact | null>(null);
   const [currentDate, setCurrentDate] = useState<string>('');
   const [timeUntilMidnight, setTimeUntilMidnight] = useState<string>('');
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
+  const [currentLanguage, setCurrentLanguage] = useState<Language>('zh-TW');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const fetchFact = async (date: string, lang: Language) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/fact?date=${date}&lang=${lang}`);
+      const data = await response.json();
+      
+      if (data.text === '今天沒有冷知識 😢' || data.text === 'No fact for today') {
+        setFact({ text: noFactMessages[lang] });
+      } else {
+        setFact(data);
+      }
+    } catch {
+      setFact({ text: noFactMessages[lang] });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     const date = new Date();
@@ -21,14 +53,22 @@ export default function Home() {
     const localDate = `${yyyy}-${mm}-${dd}`;
     setCurrentDate(localDate);
     
-    const lang = navigator.language || 'zh-TW';
-
-    fetch(`/api/fact?date=${localDate}&lang=${lang}`)
-      .then((res) => res.json())
-      .then(setFact)
-      .catch(() => {
-        setFact({ text: '無法取得今日冷知識 😢' });
-      });
+    // 檢測瀏覽器語言，預設為繁體中文
+    const browserLang = navigator.language;
+    let defaultLang: Language = 'zh-TW';
+    
+    if (browserLang.startsWith('zh')) {
+      defaultLang = browserLang.includes('CN') ? 'zh-CN' : 'zh-TW';
+    } else if (browserLang.startsWith('en')) {
+      defaultLang = 'en';
+    } else if (browserLang.startsWith('ja')) {
+      defaultLang = 'ja';
+    } else if (browserLang.startsWith('ko')) {
+      defaultLang = 'ko';
+    }
+    
+    setCurrentLanguage(defaultLang);
+    fetchFact(localDate, defaultLang);
   }, []);
 
   useEffect(() => {
@@ -60,6 +100,13 @@ export default function Home() {
       day: 'numeric',
       weekday: 'long'
     });
+  };
+
+  const handleLanguageChange = (newLang: Language) => {
+    setCurrentLanguage(newLang);
+    if (currentDate) {
+      fetchFact(currentDate, newLang);
+    }
   };
 
   const handleShare = async () => {
@@ -148,8 +195,13 @@ export default function Home() {
               {/* Language Selector */}
               <div className="flex items-center gap-2">
                 <span className="text-white/80 text-xs sm:text-sm font-medium">🌐</span>
-                <select className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-white text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-white/50">
+                <select 
+                  value={currentLanguage}
+                  onChange={(e) => handleLanguageChange(e.target.value as Language)}
+                  className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-white text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
                   <option value="zh-TW" className="text-gray-800">繁體中文</option>
+                  <option value="zh-CN" className="text-gray-800">简体中文</option>
                   <option value="en" className="text-gray-800">English</option>
                   <option value="ja" className="text-gray-800">日本語</option>
                   <option value="ko" className="text-gray-800">한국어</option>
@@ -160,7 +212,18 @@ export default function Home() {
 
           {/* Main Fact Card */}
           <section className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-400/20 animate-scale-in">
-            {fact ? (
+            {isLoading ? (
+              <div className="p-6 sm:p-8 lg:p-10">
+                <div className="flex justify-center items-center h-48 sm:h-56 lg:h-64">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p className="font-mono text-base sm:text-lg lg:text-xl text-gray-600">
+                      載入中...
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : fact ? (
               <div className="flex flex-col">
                 {/* Card Header */}
                 <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
@@ -207,9 +270,9 @@ export default function Home() {
               <div className="p-6 sm:p-8 lg:p-10">
                 <div className="flex justify-center items-center h-48 sm:h-56 lg:h-64">
                   <div className="text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <span className="text-4xl mb-4 block">😢</span>
                     <p className="font-mono text-base sm:text-lg lg:text-xl text-gray-600">
-                      載入中...
+                      {noFactMessages[currentLanguage]}
                     </p>
                   </div>
                 </div>
