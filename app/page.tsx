@@ -142,9 +142,6 @@ export default function Home() {
                   <div className="font-mono font-bold text-sm sm:text-base">
                     {currentDate && formatDate(currentDate)}
                   </div>
-                  <div className="text-xs sm:text-sm text-white/80 font-medium">
-                    Today&apos;s Special Fact
-                  </div>
                 </div>
               </div>
               
@@ -203,24 +200,6 @@ export default function Home() {
                         </p>
                       </div>
                     )}
-                  </div>
-                </div>
-
-                {/* Collectible Fact Card Placeholder */}
-                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-                  <div className="flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="text-sm sm:text-base lg:text-lg">🎴</span>
-                    <span className="font-mono font-semibold text-xs sm:text-sm lg:text-base text-gray-700">
-                      Collectible Fact Card
-                    </span>
-                    <span className="text-sm sm:text-base lg:text-lg">🎴</span>
-                  </div>
-                  <div className="mt-2 flex justify-center">
-                    <div className="bg-white rounded-lg border border-gray-200 px-3 py-1">
-                      <span className="font-mono text-xs sm:text-xs text-gray-500">
-                        #001 • {currentDate}
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
