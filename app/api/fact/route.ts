@@ -29,6 +29,21 @@ export async function GET(req: NextRequest) {
 
   const date = searchParams.get('date');
   const lang = searchParams.get('lang') || 'zh-TW';
+  const random = searchParams.get('random');
+
+  if (random === '1') {
+    // 隨機回傳一則冷知識
+    const idx = Math.floor(Math.random() * facts.length);
+    const fact = facts[idx];
+    const localized = fact.translations[lang as keyof typeof fact.translations] || fact.translations['zh-TW'];
+    return NextResponse.json({
+      error: false,
+      text: localized,
+      source: fact.source || '',
+      id: fact.id,
+      date: fact.date
+    });
+  }
 
   if (!date) {
     const messages = errorMessages[lang] || errorMessages['zh-TW'];

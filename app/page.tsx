@@ -19,6 +19,14 @@ const fallbackMessages: Record<Language, string> = {
   'ko': '오늘의 냉지식이 아직 없습니다, 내일 다시 와주세요!'
 };
 
+const changeFactButtonText: Record<Language, string> = {
+  'zh-TW': '換一則冷知識',
+  'zh-CN': '换一则冷知识',
+  'en': 'Another Fact',
+  'ja': '別の冷知識',
+  'ko': '다른 냉지식'
+};
+
 export default function Home() {
   const [fact, setFact] = useState<Fact | null>(null);
   const [currentDate, setCurrentDate] = useState<string>('');
@@ -26,11 +34,15 @@ export default function Home() {
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<Language>('zh-TW');
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isRandom, setIsRandom] = useState<boolean>(false);
 
-  const fetchFact = async (date: string, lang: Language) => {
+  const fetchFact = async (date: string, lang: Language, random = false) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/fact?date=${date}&lang=${lang}`);
+      const url = random
+        ? `/api/fact?lang=${lang}&random=1`
+        : `/api/fact?date=${date}&lang=${lang}`;
+      const response = await fetch(url);
       const data = await response.json();
       
       if (data.error && data.notFound) {
@@ -84,7 +96,8 @@ export default function Home() {
     }
     
     setCurrentLanguage(defaultLang);
-    fetchFact(localDate, defaultLang);
+    setIsRandom(false);
+    fetchFact(localDate, defaultLang, false);
   }, []);
 
   useEffect(() => {
@@ -121,8 +134,17 @@ export default function Home() {
   const handleLanguageChange = (newLang: Language) => {
     setCurrentLanguage(newLang);
     if (currentDate) {
-      fetchFact(currentDate, newLang);
+      if (isRandom) {
+        fetchFact(currentDate, newLang, true);
+      } else {
+        fetchFact(currentDate, newLang, false);
+      }
     }
+  };
+
+  const handleChangeFact = () => {
+    setIsRandom(true);
+    fetchFact(currentDate, currentLanguage, true);
   };
 
   const handleShare = async () => {
@@ -224,6 +246,18 @@ export default function Home() {
                 </select>
               </div>
             </div>
+          </section>
+
+          {/* Change Fact Button */}
+          <section className="flex justify-center">
+            <button
+              onClick={handleChangeFact}
+              className="group flex items-center justify-center gap-2 px-6 py-2 bg-gradient-to-r from-pink-500 to-orange-400 text-white rounded-lg hover:from-pink-600 hover:to-orange-500 transform transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base font-medium animate-fade-in-up mb-2"
+              style={{ animationDelay: '0.2s' }}
+            >
+              <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">🔄</span>
+              <span>{changeFactButtonText[currentLanguage]}</span>
+            </button>
           </section>
 
           {/* Main Fact Card */}
