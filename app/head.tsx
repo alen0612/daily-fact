@@ -43,24 +43,77 @@ export default function Head() {
     setMetadata(siteMetadata[lang]);
   }, []);
 
+  // 取得完整的 URL（用於 Open Graph）
+  const getFullUrl = () => {
+    if (typeof window !== 'undefined') {
+      return window.location.href;
+    }
+    return 'https://yourdomain.com'; // 預設值，部署時需要更新
+  };
+
+  // 取得完整的圖片 URL
+  const getImageUrl = () => {
+    if (typeof window !== 'undefined') {
+      return `${window.location.origin}/og-image.png`;
+    }
+    return 'https://yourdomain.com/og-image.png'; // 預設值，部署時需要更新
+  };
+
   return (
     <>
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+      {/* 基本 SEO */}
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Alen" />
+      <meta name="keywords" content="冷知識,每日知識,fun facts,日常知識,知識小品,daily fact" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={getFullUrl()} />
 
-      {/* SEO: Open Graph */}
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={getFullUrl()} />
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
-      <meta property="og:image" content="/og-image.png" />
-      <meta property="og:type" content="website" />
+      <meta property="og:image" content={getImageUrl()} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={metadata.title} />
       <meta property="og:site_name" content={metadata.siteName} />
       <meta property="og:locale" content={languageToOgLocale[currentLanguage]} />
+      
+      {/* Open Graph 多語言替代版本 */}
+      <meta property="og:locale:alternate" content="zh_TW" />
+      <meta property="og:locale:alternate" content="zh_CN" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="ja_JP" />
+      <meta property="og:locale:alternate" content="ko_KR" />
 
-      {/* SEO: Twitter Card */}
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@yourtwitterhandle" />
+      <meta name="twitter:creator" content="@yourtwitterhandle" />
       <meta name="twitter:title" content={metadata.title} />
       <meta name="twitter:description" content={metadata.description} />
+      <meta name="twitter:image" content={getImageUrl()} />
+      <meta name="twitter:image:alt" content={metadata.title} />
+
+      {/* LINE 分享優化 */}
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:secure_url" content={getImageUrl()} />
+
+      {/* 額外的社交媒體優化 */}
+      <meta name="theme-color" content="#8B5CF6" />
+      <meta name="msapplication-TileColor" content="#8B5CF6" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content={metadata.siteName} />
+      
+      {/* 預載入圖片以改善分享效能 */}
+      <link rel="preload" as="image" href="/og-image.png" />
     </>
   );
 }
