@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import facts from '@/data/facts.json';
+import { getFactByDate, getRandomFact, Language } from '../../../src/utils/facts';
 
 const errorMessages: Record<string, Record<string, string>> = {
   'zh-TW': {
@@ -28,20 +28,22 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
   const date = searchParams.get('date');
-  const lang = searchParams.get('lang') || 'zh-TW';
+  const lang = (searchParams.get('lang') || 'zh-TW') as Language;
   const random = searchParams.get('random');
 
   if (random === '1') {
-    // 隨機回傳一則冷知識
-    const idx = Math.floor(Math.random() * facts.length);
-    const fact = facts[idx];
-    const localized = fact.translations[lang as keyof typeof fact.translations] || fact.translations['zh-TW'];
+    const fact = getRandomFact(lang);
+    if (!fact) {
+      const messages = errorMessages[lang] || errorMessages['zh-TW'];
+      return NextResponse.json({
+        error: true,
+        notFound: true,
+        text: messages.noFact
+      });
+    }
     return NextResponse.json({
       error: false,
-      text: localized,
-      source: fact.source || '',
-      id: fact.id,
-      date: fact.date
+      ...fact
     });
   }
 
@@ -53,8 +55,7 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const fact = facts.find((f) => f.date === date);
-
+  const fact = getFactByDate(date, lang);
   if (!fact) {
     const messages = errorMessages[lang] || errorMessages['zh-TW'];
     return NextResponse.json({ 
@@ -64,11 +65,8 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const localized = fact.translations[lang as keyof typeof fact.translations] || fact.translations['zh-TW'];
-
   return NextResponse.json({
     error: false,
-    text: localized,
-    source: fact.source || '',
+    ...fact
   });
 }

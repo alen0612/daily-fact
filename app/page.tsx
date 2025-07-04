@@ -1,15 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { getFactByDate, getRandomFact, Language } from '../src/utils/facts';
 
 type Fact = {
   text: string;
   source?: string;
   error?: boolean;
   notFound?: boolean;
+  id?: string;
+  date?: string;
 };
-
-type Language = 'zh-TW' | 'zh-CN' | 'en' | 'ja' | 'ko';
 
 const fallbackMessages: Record<Language, string> = {
   'zh-TW': '今天還沒有冷知識喔，明天再來看看！',
@@ -39,35 +40,19 @@ export default function Home() {
   const fetchFact = async (date: string, lang: Language, random = false) => {
     setIsLoading(true);
     try {
-      const url = random
-        ? `/api/fact?lang=${lang}&random=1`
-        : `/api/fact?date=${date}&lang=${lang}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      
-      if (data.error && data.notFound) {
-        // 找不到該日期的冷知識，顯示 fallback 訊息
-        setFact({ 
-          text: fallbackMessages[lang],
-          error: true,
-          notFound: true
-        });
-      } else if (data.error) {
-        // 其他錯誤
-        setFact({ 
-          text: fallbackMessages[lang],
-          error: true
-        });
+      let factData: Fact | null = null;
+      if (random) {
+        factData = getRandomFact(lang);
       } else {
-        // 成功找到冷知識
-        setFact(data);
+        factData = getFactByDate(date, lang);
+      }
+      if (!factData) {
+        setFact({ text: fallbackMessages[lang], error: true, notFound: true });
+      } else {
+        setFact(factData);
       }
     } catch {
-      // 網路錯誤
-      setFact({ 
-        text: fallbackMessages[lang],
-        error: true
-      });
+      setFact({ text: fallbackMessages[lang], error: true });
     } finally {
       setIsLoading(false);
     }
