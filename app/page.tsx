@@ -163,12 +163,10 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 relative">
           <div className="text-center">
-            <h1 className="inline-block">
-              <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
-                <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
-                <span className="mx-2">{t('subtitle')}</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
-              </span>
+            <h1 className="font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
+              <span className="inline-block animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>📘</span>
+              <span className="mx-2">{t('subtitle')}</span>
+              <span className="inline-block animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>⭐️</span>
             </h1>
             <p className="font-mono font-semibold text-blue-100 text-xs sm:text-sm lg:text-base mt-3 sm:mt-4 tracking-wide drop-shadow-md">
               🎯 {t('tagline')} 🎯
