@@ -5,18 +5,18 @@ import { useEffect, useState } from 'react';
 type Fact = {
   text: string;
   source?: string;
+  error?: boolean;
+  notFound?: boolean;
 };
 
 type Language = 'zh-TW' | 'zh-CN' | 'en' | 'ja' | 'ko';
 
-
-
-const noFactMessages: Record<Language, string> = {
-  'zh-TW': '尚無今日冷知識',
-  'zh-CN': '暂无今日冷知识',
-  'en': 'No fact for today',
-  'ja': '今日の冷知識はありません',
-  'ko': '오늘의 냉지식이 없습니다'
+const fallbackMessages: Record<Language, string> = {
+  'zh-TW': '今天還沒有冷知識喔，明天再來看看！',
+  'zh-CN': '今天还没有冷知识哦，明天再来看吧！',
+  'en': 'No fact for today yet, come back tomorrow!',
+  'ja': '今日の冷知識はまだありません、明日また来てください！',
+  'ko': '오늘의 냉지식이 아직 없습니다, 내일 다시 와주세요!'
 };
 
 export default function Home() {
@@ -33,13 +33,29 @@ export default function Home() {
       const response = await fetch(`/api/fact?date=${date}&lang=${lang}`);
       const data = await response.json();
       
-      if (data.text === '今天沒有冷知識 😢' || data.text === 'No fact for today') {
-        setFact({ text: noFactMessages[lang] });
+      if (data.error && data.notFound) {
+        // 找不到該日期的冷知識，顯示 fallback 訊息
+        setFact({ 
+          text: fallbackMessages[lang],
+          error: true,
+          notFound: true
+        });
+      } else if (data.error) {
+        // 其他錯誤
+        setFact({ 
+          text: fallbackMessages[lang],
+          error: true
+        });
       } else {
+        // 成功找到冷知識
         setFact(data);
       }
     } catch {
-      setFact({ text: noFactMessages[lang] });
+      // 網路錯誤
+      setFact({ 
+        text: fallbackMessages[lang],
+        error: true
+      });
     } finally {
       setIsLoading(false);
     }
@@ -226,37 +242,53 @@ export default function Home() {
             ) : fact ? (
               <div className="flex flex-col">
                 {/* Card Header */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+                <div className={`px-4 sm:px-6 lg:px-8 py-3 sm:py-4 ${
+                  fact.error && fact.notFound 
+                    ? 'bg-gradient-to-r from-orange-400 to-red-500' 
+                    : 'bg-gradient-to-r from-blue-500 to-purple-600'
+                } text-white`}>
                   <div className="flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="text-lg sm:text-xl lg:text-2xl">📖</span>
+                    <span className="text-lg sm:text-xl lg:text-2xl">
+                      {fact.error && fact.notFound ? '📭' : '📖'}
+                    </span>
                     <h2 className="font-mono font-bold text-sm sm:text-base lg:text-lg tracking-wide uppercase">
-                      Today&apos;s Fact
+                      {fact.error && fact.notFound ? 'No Fact Today' : 'Today\'s Fact'}
                     </h2>
-                    <span className="text-lg sm:text-xl lg:text-2xl">✨</span>
+                    <span className="text-lg sm:text-xl lg:text-2xl">
+                      {fact.error && fact.notFound ? '😊' : '✨'}
+                    </span>
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-4 sm:p-6 lg:p-8">
                   <div className="space-y-6">
-                    {/* Fact Text */}
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6 border border-gray-100">
-                      <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800">
+                    {/* Fact Text or Fallback Message */}
+                    <div className={`rounded-lg p-4 sm:p-6 border ${
+                      fact.error && fact.notFound 
+                        ? 'bg-orange-50 border-orange-200' 
+                        : 'bg-gray-50 border-gray-100'
+                    }`}>
+                      <p className={`font-mono text-sm sm:text-base lg:text-lg leading-relaxed ${
+                        fact.error && fact.notFound ? 'text-orange-800' : 'text-gray-800'
+                      }`}>
                         {fact.text}
                       </p>
                     </div>
                     
-                    {/* Middle Ad Zone */}
-                    <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg">
-                      <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
-                        <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
-                          這裡是內容中廣告區塊
-                        </p>
+                    {/* Middle Ad Zone - 只在有冷知識時顯示 */}
+                    {!fact.error && (
+                      <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg">
+                        <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
+                          <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
+                            這裡是內容中廣告區塊
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    )}
                     
-                    {/* Source Attribution */}
-                    {fact.source && (
+                    {/* Source Attribution - 只在有冷知識時顯示 */}
+                    {fact.source && !fact.error && (
                       <div className="pt-4 border-t border-gray-100">
                         <p className="font-mono text-xs sm:text-sm text-gray-500 italic text-center">
                           — {fact.source}
@@ -272,7 +304,7 @@ export default function Home() {
                   <div className="text-center">
                     <span className="text-4xl mb-4 block">😢</span>
                     <p className="font-mono text-base sm:text-lg lg:text-xl text-gray-600">
-                      {noFactMessages[currentLanguage]}
+                      {fallbackMessages[currentLanguage]}
                     </p>
                   </div>
                 </div>
