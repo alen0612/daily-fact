@@ -34,5 +34,775 @@
       "ko": "바나나는 실제로는 베리이고, 딸기는 베리가 아니라는 사실을 알고 있었나요？ 식물학적 분류에서 바나나는 베리에 속하고, 딸기는 집합과에 속합니다."
     },
     "source": "科學月刊 2021年8月號"
+  },
+  {
+    "id": "20250707-001",
+    "date": "2025-07-07",
+    "translations": {
+      "zh-TW": "你知道嗎？鴨子的叫聲在回音中幾乎無法被聽見，至今科學家還無法完全解釋原因。",
+      "zh-CN": "你知道吗？鸭子的叫声在回音中几乎无法被听见，至今科学家仍无法完全解释原因。",
+      "en": "Did you know? A duck's quack almost doesn't echo, and scientists still don't fully understand why.",
+      "ja": "アヒルの鳴き声はほとんど反響しないことをご存じでしたか？その理由は今でも完全には解明されていません。",
+      "ko": "오리의 울음소리는 거의 메아리가 생기지 않으며, 그 이유는 아직 과학적으로 완전히 밝혀지지 않았습니다."
+    }
+  },
+  {
+    "id": "20250708-001",
+    "date": "2025-07-08",
+    "translations": {
+      "zh-TW": "你知道嗎？海馬是少數由雄性負責懷孕與生產的動物。",
+      "zh-CN": "你知道吗？海马是少数由雄性负责怀孕和生产的动物。",
+      "en": "Did you know? Seahorses are one of the few species where males get pregnant and give birth.",
+      "ja": "タツノオトシゴは、オスが妊娠して出産する数少ない生き物であることをご存じでしたか？",
+      "ko": "해마는 수컷이 임신하고 출산하는 드문 동물 중 하나입니다."
+    }
+  },
+  {
+    "id": "20250709-001",
+    "date": "2025-07-09",
+    "translations": {
+      "zh-TW": "你知道嗎？牛是有最好的朋友的，當牠們分開時會感到焦慮。",
+      "zh-CN": "你知道吗？牛是有最好的朋友的，当它们分开时会感到焦虑。",
+      "en": "Did you know? Cows have best friends and get stressed when they are separated.",
+      "ja": "ウシには親友がいて、離れるとストレスを感じることをご存じでしたか？",
+      "ko": "소는 가장 친한 친구가 있으며, 떨어지면 스트레스를 받는다는 사실을 알고 있었나요？"
+    }
+  },
+  {
+    "id": "20250710-001",
+    "date": "2025-07-10",
+    "translations": {
+      "zh-TW": "你知道嗎？蝙蝠是唯一能夠持續飛行的哺乳動物。",
+      "zh-CN": "你知道吗？蝙蝠是唯一能够持续飞行的哺乳动物。",
+      "en": "Did you know? Bats are the only mammals capable of sustained flight.",
+      "ja": "コウモリは、持続的に飛行できる唯一の哺乳類であることをご存じでしたか？",
+      "ko": "박쥐는 지속적으로 비행할 수 있는 유일한 포유류라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250711-001",
+    "date": "2025-07-11",
+    "translations": {
+      "zh-TW": "你知道嗎？貓在墜落時會自動調整姿勢，稱為「翻身反射」。",
+      "zh-CN": "你知道吗？猫在坠落时会自动调整姿势，这被称为\"翻身反射\"。",
+      "en": "Did you know? Cats automatically adjust their body position when falling, known as the 'righting reflex'.",
+      "ja": "ネコは落下中に自分の体勢を調整する「立ち直り反射」を持っていることをご存じでしたか？",
+      "ko": "고양이는 낙하 중에 몸의 자세를 조절하는 '반전 반사'를 가지고 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250712-001",
+    "date": "2025-07-12",
+    "translations": {
+      "zh-TW": "你知道嗎？蜂鳥的心跳每分鐘可達超過1200次。",
+      "zh-CN": "你知道吗？蜂鸟的心跳每分钟可以超过1200次。",
+      "en": "Did you know? A hummingbird's heart can beat over 1200 times per minute.",
+      "ja": "ハチドリの心拍数は1分間に1200回を超えることをご存じでしたか？",
+      "ko": "벌새의 심장은 분당 1200회 이상 뛰는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250713-001",
+    "date": "2025-07-13",
+    "translations": {
+      "zh-TW": "你知道嗎？北極熊的皮膚其實是黑色的，用來吸收更多熱量。",
+      "zh-CN": "你知道吗？北极熊的皮肤其实是黑色的，用来吸收更多热量。",
+      "en": "Did you know? A polar bear's skin is actually black to absorb more heat.",
+      "ja": "ホッキョクグマの肌は実は黒く、より多くの熱を吸収するためであることをご存じでしたか？",
+      "ko": "북극곰의 피부는 사실 검은색이며, 더 많은 열을 흡수하기 위해 그렇다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250714-001",
+    "date": "2025-07-14",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最快的動物是軍艦鳥，在俯衝時速度可超過300公里每小時。",
+      "zh-CN": "你知道吗？地球上最快的动物是军舰鸟，在俯冲时速度可超过300公里每小时。",
+      "en": "Did you know? The fastest animal on Earth is the peregrine falcon, diving at over 300 km/h.",
+      "ja": "地球上で最も速い動物はハヤブサで、急降下の際に時速300kmを超えることをご存じでしたか？",
+      "ko": "지구상에서 가장 빠른 동물은 송골매이며, 낙하 시 속도가 시속 300km를 넘는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250715-001",
+    "date": "2025-07-15",
+    "translations": {
+      "zh-TW": "你知道嗎？貓頭鷹的眼睛不能轉動，但牠們的脖子可以旋轉將近270度。",
+      "zh-CN": "你知道吗？猫头鹰的眼睛不能转动，但它们的脖子可以旋转近270度。",
+      "en": "Did you know? Owls can't move their eyes, but they can rotate their necks almost 270 degrees.",
+      "ja": "フクロウは目を動かすことができませんが、首を270度近く回せることをご存じでしたか？",
+      "ko": "부엉이는 눈을 움직일 수 없지만, 목을 거의 270도까지 돌릴 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250716-001",
+    "date": "2025-07-16",
+    "translations": {
+      "zh-TW": "你知道嗎？鯨魚的歌聲可以傳播超過千公里遠。",
+      "zh-CN": "你知道吗？鲸鱼的歌声可以传播超过一千公里远。",
+      "en": "Did you know? Whale songs can travel over a thousand kilometers in the ocean.",
+      "ja": "クジラの歌声は海の中で1000キロ以上届くことをご存じでしたか？",
+      "ko": "고래의 노래는 바다 속에서 천 킬로미터 이상 전달될 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250717-001",
+    "date": "2025-07-17",
+    "translations": {
+      "zh-TW": "你知道嗎？鯊魚是唯一不會得癌症的已知魚類，牠們的軟骨組織中含有特殊的抗血管生成物質。",
+      "zh-CN": "你知道吗？鲨鱼是唯一已知不会得癌症的鱼类，它们的软骨组织中含有特殊的抗血管生成物质。",
+      "en": "Did you know? Sharks are the only known fish that don't get cancer, due to compounds in their cartilage that inhibit blood vessel growth.",
+      "ja": "サメはがんにかからない唯一の魚類として知られており、その軟骨には血管新生を抑える成分が含まれています。",
+      "ko": "상어는 암에 걸리지 않는 것으로 알려진 유일한 어류이며, 연골에는 혈관 생성을 억제하는 물질이 포함되어 있습니다."
+    }
+  },
+  {
+    "id": "20250718-001",
+    "date": "2025-07-18",
+    "translations": {
+      "zh-TW": "你知道嗎？蝸牛可以進入為期三年的休眠狀態以度過乾旱。",
+      "zh-CN": "你知道吗？蜗牛可以进入长达三年的休眠状态以度过干旱。",
+      "en": "Did you know? Snails can hibernate for up to three years to survive drought conditions.",
+      "ja": "カタツムリは乾燥を乗り越えるために、最大3年間休眠することができることをご存じでしたか？",
+      "ko": "달팽이는 가뭄을 견디기 위해 최대 3년 동안 휴면 상태에 들어갈 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250719-001",
+    "date": "2025-07-19",
+    "translations": {
+      "zh-TW": "你知道嗎？企鵝的膝蓋藏在牠們的羽毛下，看起來像是沒有膝蓋其實只是被遮住了。",
+      "zh-CN": "你知道吗？企鹅的膝盖藏在它们的羽毛下，其实并不是没有膝盖，只是被遮住了。",
+      "en": "Did you know? Penguins do have knees—they're just hidden beneath their feathers.",
+      "ja": "ペンギンには実は膝があり、羽毛の下に隠れているだけであることをご存じでしたか？",
+      "ko": "펭귄은 실제로 무릎이 있으며, 단지 깃털 아래에 숨겨져 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250720-001",
+    "date": "2025-07-20",
+    "translations": {
+      "zh-TW": "你知道嗎？水母沒有大腦，但牠們仍然能進行基本的感應與移動。",
+      "zh-CN": "你知道吗？水母没有大脑，但它们仍然能够感知环境并移动。",
+      "en": "Did you know? Jellyfish have no brains, yet they can still sense and move using a nerve net.",
+      "ja": "クラゲには脳がありませんが、神経網を使って感知し移動できることをご存じでしたか？",
+      "ko": "해파리는 뇌가 없지만, 신경망을 통해 감지하고 움직일 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250721-001",
+    "date": "2025-07-21",
+    "translations": {
+      "zh-TW": "你知道嗎？龍蝦的壽命可以超過100年，而且牠們不會自然老死。",
+      "zh-CN": "你知道吗？龙虾的寿命可以超过100年，而且不会自然老死。",
+      "en": "Did you know? Lobsters can live over 100 years and don't die from old age.",
+      "ja": "ロブスターは100年以上生きることができ、老衰で死ぬことがないとされています。",
+      "ko": "바닷가재는 100년 이상 살 수 있으며, 노화로 죽지 않는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250722-001",
+    "date": "2025-07-22",
+    "translations": {
+      "zh-TW": "你知道嗎？大象能夠分辨人類的語言與聲音情緒，甚至能辨識敵意。",
+      "zh-CN": "你知道吗？大象能够分辨人类的语言和情绪，甚至可以识别敌意。",
+      "en": "Did you know? Elephants can distinguish human languages and vocal emotions, even recognizing hostility.",
+      "ja": "ゾウは人間の言語や声の感情を識別し、敵意さえも認識できることをご存じでしたか？",
+      "ko": "코끼리는 인간의 언어와 감정을 구분할 수 있으며, 심지어 적대감도 인식할 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250723-001",
+    "date": "2025-07-23",
+    "translations": {
+      "zh-TW": "你知道嗎？樹懶每週只排便一次，並會冒險下樹完成這件事。",
+      "zh-CN": "你知道吗？树懒每周只排便一次，并会冒险下树完成这件事。",
+      "en": "Did you know? Sloths only defecate once a week and descend from trees to do it.",
+      "ja": "ナマケモノは週に一度しか排便せず、そのために木から降りることをご存じでしたか？",
+      "ko": "나무늘보는 일주일에 한 번만 배변하며, 이를 위해 나무에서 내려온다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250724-001",
+    "date": "2025-07-24",
+    "translations": {
+      "zh-TW": "你知道嗎？蜂群中的工蜂全是雌性，雄蜂的唯一職責是交配後死亡。",
+      "zh-CN": "你知道吗？蜂群中的工蜂全是雌性，雄蜂唯一的职责是交配后死亡。",
+      "en": "Did you know? All worker bees in a hive are female, and male drones die after mating.",
+      "ja": "ミツバチの巣の働きバチはすべてメスで、オスのハチは交尾後に死ぬことをご存じでしたか？",
+      "ko": "벌집 속 일벌은 모두 암컷이며, 수벌은 교미 후 죽는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250725-001",
+    "date": "2025-07-25",
+    "translations": {
+      "zh-TW": "你知道嗎？烏龜能夠透過排泄系統吸收氧氣，在冬眠時幾乎不用呼吸。",
+      "zh-CN": "你知道吗？乌龟可以通过排泄系统吸收氧气，在冬眠时几乎不用呼吸。",
+      "en": "Did you know? Turtles can absorb oxygen through their cloaca, allowing them to hibernate with minimal breathing.",
+      "ja": "カメは排泄器官から酸素を吸収できるため、冬眠中にほとんど呼吸を必要としないことをご存じでしたか？",
+      "ko": "거북이는 항문을 통해 산소를 흡수할 수 있어, 겨울잠 동안 거의 호흡하지 않아도 된다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250726-001",
+    "date": "2025-07-26",
+    "translations": {
+      "zh-TW": "你知道嗎？烏賊擁有三顆心臟，其中兩顆只負責將血液輸送到鰓。",
+      "zh-CN": "你知道吗？乌贼有三颗心脏，其中两颗专门负责把血液输送到鳃。",
+      "en": "Did you know? Squids have three hearts, two of which pump blood specifically to the gills.",
+      "ja": "イカには心臓が3つあり、そのうち2つはエラに血液を送る専用のものです。",
+      "ko": "오징어는 세 개의 심장을 가지고 있으며, 그 중 두 개는 아가미로 혈액을 보내는 데 사용된다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250727-001",
+    "date": "2025-07-27",
+    "translations": {
+      "zh-TW": "你知道嗎？螞蟻可以舉起自身體重50倍的重量，相當於人類舉起一輛汽車。",
+      "zh-CN": "你知道吗？蚂蚁可以举起自身体重50倍的重量，相当于人类举起一辆汽车。",
+      "en": "Did you know? Ants can lift up to 50 times their own body weight, equivalent to a human lifting a car.",
+      "ja": "アリは自分の体重の50倍の重さを持ち上げることができ、人間が車を持ち上げるのと同じことです。",
+      "ko": "개미는 자신의 체중의 50배 무게를 들 수 있으며, 이는 인간이 자동차를 드는 것과 같습니다."
+    }
+  },
+  {
+    "id": "20250728-001",
+    "date": "2025-07-28",
+    "translations": {
+      "zh-TW": "你知道嗎？蝴蝶的味覺器官在腳上，牠們用腳來品嚐花朵的味道。",
+      "zh-CN": "你知道吗？蝴蝶的味觉器官在脚上，它们用脚来品尝花朵的味道。",
+      "en": "Did you know? Butterflies taste with their feet, using taste receptors on their legs to sample flowers.",
+      "ja": "チョウの味覚器官は足にあり、足で花の味を味わうことをご存じでしたか？",
+      "ko": "나비의 미각 기관은 다리에 있으며, 다리로 꽃의 맛을 맛본다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250729-001",
+    "date": "2025-07-29",
+    "translations": {
+      "zh-TW": "你知道嗎？河馬的汗液是粉紅色的，具有天然的防曬功能。",
+      "zh-CN": "你知道吗？河马的汗液是粉红色的，具有天然的防晒功能。",
+      "en": "Did you know? Hippos secrete pink sweat that acts as a natural sunscreen.",
+      "ja": "カバの汗はピンク色で、天然の日焼け止めとして機能することをご存じでしたか？",
+      "ko": "하마의 땀은 분홍색이며, 천연 자외선 차단제 역할을 한다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250730-001",
+    "date": "2025-07-30",
+    "translations": {
+      "zh-TW": "你知道嗎？長頸鹿的舌頭長達50公分，可以清潔自己的耳朵。",
+      "zh-CN": "你知道吗？长颈鹿的舌头长达50厘米，可以清洁自己的耳朵。",
+      "en": "Did you know? A giraffe's tongue is up to 50 cm long and can clean its own ears.",
+      "ja": "キリンの舌は50センチメートルもあり、自分の耳を掃除できることをご存じでしたか？",
+      "ko": "기린의 혀는 50cm까지 길며, 자신의 귀를 청소할 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250731-001",
+    "date": "2025-07-31",
+    "translations": {
+      "zh-TW": "你知道嗎？袋鼠無法向後跳躍，只能向前跳。",
+      "zh-CN": "你知道吗？袋鼠无法向后跳跃，只能向前跳。",
+      "en": "Did you know? Kangaroos cannot hop backwards, they can only hop forward.",
+      "ja": "カンガルーは後ろ向きにジャンプできず、前向きにしかジャンプできないことをご存じでしたか？",
+      "ko": "캥거루는 뒤로 점프할 수 없고, 앞으로만 점프할 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250801-001",
+    "date": "2025-08-01",
+    "translations": {
+      "zh-TW": "你知道嗎？海豚睡覺時只有一半的大腦休息，另一半保持清醒以維持呼吸。",
+      "zh-CN": "你知道吗？海豚睡觉时只有一半的大脑休息，另一半保持清醒以维持呼吸。",
+      "en": "Did you know? Dolphins sleep with only half their brain at a time, keeping the other half awake to breathe.",
+      "ja": "イルカは睡眠中に脳の半分だけを休ませ、もう半分は呼吸のために起きていることをご存じでしたか？",
+      "ko": "돌고래는 잠잘 때 뇌의 절반만 쉬고, 나머지 절반은 호흡을 위해 깨어있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250802-001",
+    "date": "2025-08-02",
+    "translations": {
+      "zh-TW": "你知道嗎？變色龍的舌頭可以伸長到身體長度的兩倍。",
+      "zh-CN": "你知道吗？变色龙的舌头可以伸长到身体长度的两倍。",
+      "en": "Did you know? A chameleon's tongue can extend to twice the length of its body.",
+      "ja": "カメレオンの舌は体の長さの2倍まで伸ばすことができることをご存じでしたか？",
+      "ko": "카멜레온의 혀는 몸 길이의 두 배까지 늘어날 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250803-001",
+    "date": "2025-08-03",
+    "translations": {
+      "zh-TW": "你知道嗎？企鵝可以跳躍到水面以上2公尺的高度。",
+      "zh-CN": "你知道吗？企鹅可以跳跃到水面以上2米的高度。",
+      "en": "Did you know? Penguins can jump up to 2 meters above the water's surface.",
+      "ja": "ペンギンは水面から2メートルの高さまでジャンプできることをご存じでしたか？",
+      "ko": "펭귄은 수면 위 2미터까지 점프할 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250804-001",
+    "date": "2025-08-04",
+    "translations": {
+      "zh-TW": "你知道嗎？駱駝的駝峰不是用來儲存水，而是用來儲存脂肪。",
+      "zh-CN": "你知道吗？骆驼的驼峰不是用来储存水，而是用来储存脂肪。",
+      "en": "Did you know? A camel's hump doesn't store water, it stores fat.",
+      "ja": "ラクダのこぶは水を蓄えるのではなく、脂肪を蓄えるためのものであることをご存じでしたか？",
+      "ko": "낙타의 혹은 물을 저장하는 것이 아니라 지방을 저장하는 용도라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250805-001",
+    "date": "2025-08-05",
+    "translations": {
+      "zh-TW": "你知道嗎？蜘蛛絲的強度比鋼鐵還要強，但重量卻輕得多。",
+      "zh-CN": "你知道吗？蜘蛛丝的强度比钢铁还要强，但重量却轻得多。",
+      "en": "Did you know? Spider silk is stronger than steel but much lighter in weight.",
+      "ja": "クモの糸は鋼鉄よりも強く、しかし重さははるかに軽いことをご存じでしたか？",
+      "ko": "거미줄은 강철보다 강하지만 무게는 훨씬 가볍다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250806-001",
+    "date": "2025-08-06",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的指紋在胎兒時期就已經形成，而且每個人的指紋都是獨一無二的。",
+      "zh-CN": "你知道吗？人类的指纹在胎儿时期就已经形成，而且每个人的指纹都是独一无二的。",
+      "en": "Did you know? Human fingerprints form during fetal development and are unique to each individual.",
+      "ja": "人間の指紋は胎児期に形成され、各人の指紋は固有であることをご存じでしたか？",
+      "ko": "인간의 지문은 태아기 때 형성되며, 각 개인의 지문은 고유하다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250807-001",
+    "date": "2025-08-07",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上的黃金大部分來自隕石撞擊，而不是地球本身形成的。",
+      "zh-CN": "你知道吗？地球上的黄金大部分来自陨石撞击，而不是地球本身形成的。",
+      "en": "Did you know? Most of Earth's gold came from meteorite impacts, not from Earth's original formation.",
+      "ja": "地球の金の大部分は隕石の衝突によってもたらされ、地球自体の形成によるものではないことをご存じでしたか？",
+      "ko": "지구의 금 대부분은 운석 충돌로 인해 생겼으며, 지구 자체의 형성으로 생긴 것이 아니라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250808-001",
+    "date": "2025-08-08",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的DNA與香蕉有50%的相似度，與黑猩猩有98%的相似度。",
+      "zh-CN": "你知道吗？人类的DNA与香蕉有50%的相似度，与黑猩猩有98%的相似度。",
+      "en": "Did you know? Human DNA is 50% similar to bananas and 98% similar to chimpanzees.",
+      "ja": "人間のDNAはバナナと50%類似し、チンパンジーとは98%類似していることをご存じでしたか？",
+      "ko": "인간의 DNA는 바나나와 50% 유사하고, 침팬지와는 98% 유사하다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250809-001",
+    "date": "2025-08-09",
+    "translations": {
+      "zh-TW": "你知道嗎？太陽系中最大的火山是火星上的奧林帕斯山，高度是聖母峰的三倍。",
+      "zh-CN": "你知道吗？太阳系中最大的火山是火星上的奥林匹斯山，高度是珠穆朗玛峰的三倍。",
+      "en": "Did you know? The largest volcano in the solar system is Olympus Mons on Mars, three times taller than Mount Everest.",
+      "ja": "太陽系最大の火山は火星のオリンポス山で、エベレストの3倍の高さであることをご存じでしたか？",
+      "ko": "태양계에서 가장 큰 화산은 화성의 올림푸스 산으로, 에베레스트의 3배 높이라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250810-001",
+    "date": "2025-08-10",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的大腦在睡眠時比清醒時更活躍，會進行記憶整理和清理工作。",
+      "zh-CN": "你知道吗？人类的大脑在睡眠时比清醒时更活跃，会进行记忆整理和清理工作。",
+      "en": "Did you know? The human brain is more active during sleep than when awake, processing memories and cleaning up.",
+      "ja": "人間の脳は睡眠中に起きている時よりも活発に活動し、記憶の整理とクリーンアップを行うことをご存じでしたか？",
+      "ko": "인간의 뇌는 잠잘 때 깨어있을 때보다 더 활발하게 활동하며, 기억을 정리하고 정리한다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250811-001",
+    "date": "2025-08-11",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最深的海溝是馬里亞納海溝，深度超過11公里。",
+      "zh-CN": "你知道吗？地球上最深的海沟是马里亚纳海沟，深度超过11公里。",
+      "en": "Did you know? The deepest ocean trench on Earth is the Mariana Trench, over 11 kilometers deep.",
+      "ja": "地球上で最も深い海溝はマリアナ海溝で、深さは11キロメートルを超えることをご存じでしたか？",
+      "ko": "지구에서 가장 깊은 해구는 마리아나 해구로, 깊이가 11km를 넘는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250812-001",
+    "date": "2025-08-12",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的舌頭可以分辨出五種基本味道：甜、酸、苦、鹹、鮮。",
+      "zh-CN": "你知道吗？人类的舌头可以分辨出五种基本味道：甜、酸、苦、咸、鲜。",
+      "en": "Did you know? The human tongue can distinguish five basic tastes: sweet, sour, bitter, salty, and umami.",
+      "ja": "人間の舌は5つの基本味を識別できることをご存じでしたか？甘味、酸味、苦味、塩味、うま味です。",
+      "ko": "인간의 혀는 다섯 가지 기본 맛을 구분할 수 있다는 사실을 알고 있었나요? 단맛, 신맛, 쓴맛, 짠맛, 감칠맛입니다."
+    }
+  },
+  {
+    "id": "20250813-001",
+    "date": "2025-08-13",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最古老的岩石有44億年歷史，比地球本身還要老。",
+      "zh-CN": "你知道吗？地球上最古老的岩石有44亿年历史，比地球本身还要老。",
+      "en": "Did you know? The oldest rocks on Earth are 4.4 billion years old, older than Earth itself.",
+      "ja": "地球上で最も古い岩石は44億年前のもので、地球自体よりも古いことをご存じでしたか？",
+      "ko": "지구에서 가장 오래된 암석은 44억 년 전 것으로, 지구 자체보다 오래되었다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250814-001",
+    "date": "2025-08-14",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的眼睛可以分辨出約1000萬種不同的顏色。",
+      "zh-CN": "你知道吗？人类的眼睛可以分辨出约1000万种不同的颜色。",
+      "en": "Did you know? The human eye can distinguish approximately 10 million different colors.",
+      "ja": "人間の目は約1000万色の異なる色を識別できることをご存じでしたか？",
+      "ko": "인간의 눈은 약 1000만 가지의 다른 색상을 구분할 수 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250815-001",
+    "date": "2025-08-15",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最冷的地方是南極洲的沃斯托克站，溫度可達零下89度。",
+      "zh-CN": "你知道吗？地球上最冷的地方是南极洲的沃斯托克站，温度可达零下89度。",
+      "en": "Did you know? The coldest place on Earth is Vostok Station in Antarctica, reaching -89 degrees Celsius.",
+      "ja": "地球上で最も寒い場所は南極のボストーク基地で、マイナス89度に達することをご存じでしたか？",
+      "ko": "지구에서 가장 추운 곳은 남극의 보스톡 기지로, 영하 89도까지 내려간다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250816-001",
+    "date": "2025-08-16",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的骨骼在25歲左右達到最大密度，之後會逐漸減少。",
+      "zh-CN": "你知道吗？人类的骨骼在25岁左右达到最大密度，之后会逐渐减少。",
+      "en": "Did you know? Human bones reach their maximum density around age 25, then gradually decrease.",
+      "ja": "人間の骨は25歳頃に最大密度に達し、その後徐々に減少することをご存じでしたか？",
+      "ko": "인간의 뼈는 25세 정도에 최대 밀도에 도달한 후 점진적으로 감소한다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250817-001",
+    "date": "2025-08-17",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最熱的地方是伊朗的盧特沙漠，溫度可達70度。",
+      "zh-CN": "你知道吗？地球上最热的地方是伊朗的卢特沙漠，温度可达70度。",
+      "en": "Did you know? The hottest place on Earth is the Lut Desert in Iran, reaching 70 degrees Celsius.",
+      "ja": "地球上で最も暑い場所はイランのルート砂漠で、70度に達することをご存じでしたか？",
+      "ko": "지구에서 가장 뜨거운 곳은 이란의 루트 사막으로, 온도가 70도까지 올라간다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250818-001",
+    "date": "2025-08-18",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的頭髮每月平均生長1.25公分，但不同部位的生長速度不同。",
+      "zh-CN": "你知道吗？人类的头发每月平均生长1.25厘米，但不同部位的生长速度不同。",
+      "en": "Did you know? Human hair grows an average of 1.25 cm per month, but growth rates vary by body part.",
+      "ja": "人間の髪は月平均1.25センチメートル成長しますが、部位によって成長速度が異なることをご存じでしたか？",
+      "ko": "인간의 머리카락은 월 평균 1.25cm 자라지만, 신체 부위에 따라 성장 속도가 다르다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250819-001",
+    "date": "2025-08-19",
+    "translations": {
+      "zh-TW": "你知道嗎？月球正在以每年3.8公分的速度遠離地球。",
+      "zh-CN": "你知道吗？月球正在以每年3.8厘米的速度远离地球。",
+      "en": "Did you know? The Moon is moving away from Earth at a rate of 3.8 cm per year.",
+      "ja": "月は年間3.8センチメートルの速度で地球から遠ざかっていることをご存じでしたか？",
+      "ko": "달은 매년 3.8cm의 속도로 지구에서 멀어지고 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250820-001",
+    "date": "2025-08-20",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的皮膚是身體最大的器官，總重量約3.6公斤。",
+      "zh-CN": "你知道吗？人类的皮肤是身体最大的器官，总重量约3.6公斤。",
+      "en": "Did you know? Human skin is the body's largest organ, weighing about 3.6 kilograms total.",
+      "ja": "人間の皮膚は体で最も大きな臓器で、総重量は約3.6キログラムであることをご存じでしたか？",
+      "ko": "인간의 피부는 신체에서 가장 큰 기관으로, 총 무게가 약 3.6kg이라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250821-001",
+    "date": "2025-08-21",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最高的瀑布是委內瑞拉的安赫爾瀑布，高度979公尺。",
+      "zh-CN": "你知道吗？地球上最高的瀑布是委内瑞拉的安赫尔瀑布，高度979米。",
+      "en": "Did you know? The highest waterfall on Earth is Angel Falls in Venezuela, 979 meters tall.",
+      "ja": "地球上で最も高い滝はベネズエラのエンジェルフォールで、高さは979メートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 높은 폭포는 베네수엘라의 엔젤 폭포로, 높이가 979m라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250822-001",
+    "date": "2025-08-22",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的指甲每月平均生長3.5公釐，腳趾甲生長速度較慢。",
+      "zh-CN": "你知道吗？人类的指甲每月平均生长3.5毫米，脚趾甲生长速度较慢。",
+      "en": "Did you know? Human fingernails grow an average of 3.5 mm per month, while toenails grow slower.",
+      "ja": "人間の爪は月平均3.5ミリメートル成長しますが、足の爪は成長速度が遅いことをご存じでしたか？",
+      "ko": "인간의 손톱은 월 평균 3.5mm 자라지만, 발톱은 성장 속도가 더 느리다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250823-001",
+    "date": "2025-08-23",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的沙漠是南極洲，面積約1400萬平方公里。",
+      "zh-CN": "你知道吗？地球上最大的沙漠是南极洲，面积约1400万平方公里。",
+      "en": "Did you know? The largest desert on Earth is Antarctica, covering about 14 million square kilometers.",
+      "ja": "地球上で最も大きな砂漠は南極大陸で、面積は約1400万平方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 사막은 남극 대륙으로, 면적이 약 1400만 제곱킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250824-001",
+    "date": "2025-08-24",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的血液約佔體重的7%，成年人體內約有5公升血液。",
+      "zh-CN": "你知道吗？人类的血液约占体重的7%，成年人体内约有5升血液。",
+      "en": "Did you know? Human blood makes up about 7% of body weight, with adults having about 5 liters of blood.",
+      "ja": "人間の血液は体重の約7%を占め、成人の体内には約5リットルの血液があることをご存じでしたか？",
+      "ko": "인간의 혈액은 체중의 약 7%를 차지하며, 성인의 체내에는 약 5리터의 혈액이 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250825-001",
+    "date": "2025-08-25",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最長的河流是尼羅河，全長6650公里。",
+      "zh-CN": "你知道吗？地球上最长的河流是尼罗河，全长6650公里。",
+      "en": "Did you know? The longest river on Earth is the Nile, stretching 6,650 kilometers.",
+      "ja": "地球上で最も長い川はナイル川で、全長は6650キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 긴 강은 나일강으로, 전체 길이가 6650km라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250826-001",
+    "date": "2025-08-26",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的胃酸強度足以溶解金屬，但胃壁有特殊保護層。",
+      "zh-CN": "你知道吗？人类的胃酸强度足以溶解金属，但胃壁有特殊保护层。",
+      "en": "Did you know? Human stomach acid is strong enough to dissolve metal, but the stomach wall has a protective lining.",
+      "ja": "人間の胃酸は金属を溶かすほど強力ですが、胃壁には特殊な保護層があることをご存じでしたか？",
+      "ko": "인간의 위산은 금속을 녹일 수 있을 정도로 강하지만, 위벽에는 특별한 보호층이 있다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250827-001",
+    "date": "2025-08-27",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的活火山是夏威夷的莫納羅亞火山，體積約7.5萬立方公里。",
+      "zh-CN": "你知道吗？地球上最大的活火山是夏威夷的莫纳罗亚火山，体积约7.5万立方公里。",
+      "en": "Did you know? The largest active volcano on Earth is Mauna Loa in Hawaii, with a volume of about 75,000 cubic kilometers.",
+      "ja": "地球上で最も大きな活火山はハワイのマウナロア火山で、体積は約7.5万立方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 활화산은 하와이의 마우나로아 화산으로, 부피가 약 7.5만 입방킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250828-001",
+    "date": "2025-08-28",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的肺部表面積約等於一個網球場的大小。",
+      "zh-CN": "你知道吗？人类的肺部表面积约等于一个网球场的大小。",
+      "en": "Did you know? The surface area of human lungs is roughly equal to the size of a tennis court.",
+      "ja": "人間の肺の表面積はテニスコートの大きさにほぼ等しいことをご存じでしたか？",
+      "ko": "인간의 폐 표면적은 테니스 코트 크기와 거의 같다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250829-001",
+    "date": "2025-08-29",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最深的湖泊是貝加爾湖，深度1642公尺。",
+      "zh-CN": "你知道吗？地球上最深的湖泊是贝加尔湖，深度1642米。",
+      "en": "Did you know? The deepest lake on Earth is Lake Baikal, reaching 1,642 meters deep.",
+      "ja": "地球上で最も深い湖はバイカル湖で、深さは1642メートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 깊은 호수는 바이칼 호수로, 깊이가 1642m라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250830-001",
+    "date": "2025-08-30",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的心臟每天跳動約10萬次，一生中約跳動25億次。",
+      "zh-CN": "你知道吗？人类的心脏每天跳动约10万次，一生中约跳动25亿次。",
+      "en": "Did you know? The human heart beats about 100,000 times per day, totaling about 2.5 billion beats in a lifetime.",
+      "ja": "人間の心臓は1日に約10万回鼓動し、一生で約25億回鼓動することをご存じでしたか？",
+      "ko": "인간의 심장은 하루에 약 10만 번 뛰며, 평생 약 25억 번 뛴다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250831-001",
+    "date": "2025-08-31",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的島嶼是格陵蘭島，面積216萬平方公里。",
+      "zh-CN": "你知道吗？地球上最大的岛屿是格陵兰岛，面积216万平方公里。",
+      "en": "Did you know? The largest island on Earth is Greenland, covering 2.16 million square kilometers.",
+      "ja": "地球上で最も大きな島はグリーンランドで、面積は216万平方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 섬은 그린란드로, 면적이 216만 제곱킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250901-001",
+    "date": "2025-09-01",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的肝臟是唯一能夠自我再生的內臟器官。",
+      "zh-CN": "你知道吗？人类的肝脏是唯一能够自我再生的内脏器官。",
+      "en": "Did you know? The human liver is the only internal organ capable of regenerating itself.",
+      "ja": "人間の肝臓は自己再生が可能な唯一の内臓器官であることをご存じでしたか？",
+      "ko": "인간의 간은 스스로 재생할 수 있는 유일한 내장 기관이라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250902-001",
+    "date": "2025-09-02",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最高的山峰是聖母峰，海拔8848公尺。",
+      "zh-CN": "你知道吗？地球上最高的山峰是珠穆朗玛峰，海拔8848米。",
+      "en": "Did you know? The highest mountain on Earth is Mount Everest, standing 8,848 meters above sea level.",
+      "ja": "地球上で最も高い山はエベレストで、標高は8848メートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 높은 산은 에베레스트로, 해발 8848m라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250903-001",
+    "date": "2025-09-03",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的腎臟每天過濾約180公升的血液。",
+      "zh-CN": "你知道吗？人类的肾脏每天过滤约180升的血液。",
+      "en": "Did you know? Human kidneys filter about 180 liters of blood per day.",
+      "ja": "人間の腎臓は1日に約180リットルの血液をろ過することをご存じでしたか？",
+      "ko": "인간의 신장은 하루에 약 180리터의 혈액을 여과한다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250904-001",
+    "date": "2025-09-04",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的海洋是太平洋，面積約1.65億平方公里。",
+      "zh-CN": "你知道吗？地球上最大的海洋是太平洋，面积约1.65亿平方公里。",
+      "en": "Did you know? The largest ocean on Earth is the Pacific Ocean, covering about 165 million square kilometers.",
+      "ja": "地球上で最も大きな海は太平洋で、面積は約1.65億平方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 바다는 태평양으로, 면적이 약 1.65억 제곱킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250905-001",
+    "date": "2025-09-05",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的腦細胞每天會死亡約10萬個，但大腦會持續產生新的神經元。",
+      "zh-CN": "你知道吗？人类的脑细胞每天会死亡约10万个，但大脑会持续产生新的神经元。",
+      "en": "Did you know? About 100,000 brain cells die each day, but the brain continues to produce new neurons.",
+      "ja": "人間の脳細胞は1日に約10万個死ぬが、脳は新しい神経細胞を継続的に生産することをご存じでしたか？",
+      "ko": "인간의 뇌세포는 하루에 약 10만 개가 죽지만, 뇌는 새로운 뉴런을 계속 생산한다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250906-001",
+    "date": "2025-09-06",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的珊瑚礁系統是大堡礁，長度超過2300公里。",
+      "zh-CN": "你知道吗？地球上最大的珊瑚礁系统是大堡礁，长度超过2300公里。",
+      "en": "Did you know? The largest coral reef system on Earth is the Great Barrier Reef, stretching over 2,300 kilometers.",
+      "ja": "地球上で最も大きなサンゴ礁システムはグレートバリアリーフで、長さは2300キロメートルを超えることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 산호초 시스템은 그레이트 배리어 리프로, 길이가 2300km를 넘는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250907-001",
+    "date": "2025-09-07",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的腸道內有超過100兆個細菌，重量約2公斤。",
+      "zh-CN": "你知道吗？人类的肠道内有超过100万亿个细菌，重量约2公斤。",
+      "en": "Did you know? The human gut contains over 100 trillion bacteria, weighing about 2 kilograms.",
+      "ja": "人間の腸内には100兆個以上の細菌がおり、重さは約2キログラムであることをご存じでしたか？",
+      "ko": "인간의 장내에는 100조 개 이상의 박테리아가 있으며, 무게가 약 2kg이라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250908-001",
+    "date": "2025-09-08",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最長的洞穴系統是美國的猛獁洞，長度超過650公里。",
+      "zh-CN": "你知道吗？地球上最长的洞穴系统是美国的猛犸洞，长度超过650公里。",
+      "en": "Did you know? The longest cave system on Earth is Mammoth Cave in the US, extending over 650 kilometers.",
+      "ja": "地球上で最も長い洞窟システムはアメリカのマンモスケーブで、長さは650キロメートルを超えることをご存じでしたか？",
+      "ko": "지구에서 가장 긴 동굴 시스템은 미국의 매머드 케이브로, 길이가 650km를 넘는다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250909-001",
+    "date": "2025-09-09",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的肌肉約佔體重的40%，但女性通常比男性少10%。",
+      "zh-CN": "你知道吗？人类的肌肉约占体重的40%，但女性通常比男性少10%。",
+      "en": "Did you know? Human muscles make up about 40% of body weight, but women typically have 10% less than men.",
+      "ja": "人間の筋肉は体重の約40%を占めるが、女性は通常男性より10%少ないことをご存じでしたか？",
+      "ko": "인간의 근육은 체중의 약 40%를 차지하지만, 여성은 보통 남성보다 10% 적다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250910-001",
+    "date": "2025-09-10",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的淡水湖是蘇必略湖，面積約8.2萬平方公里。",
+      "zh-CN": "你知道吗？地球上最大的淡水湖是苏必利尔湖，面积约8.2万平方公里。",
+      "en": "Did you know? The largest freshwater lake on Earth is Lake Superior, covering about 82,000 square kilometers.",
+      "ja": "地球上で最も大きな淡水湖はスペリオル湖で、面積は約8.2万平方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 담수호는 수피리어 호수로, 면적이 약 8.2만 제곱킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250911-001",
+    "date": "2025-09-11",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的骨骼在出生時約有300塊，成年後融合成206塊。",
+      "zh-CN": "你知道吗？人类的骨骼在出生时约有300块，成年后融合成206块。",
+      "en": "Did you know? Human babies are born with about 300 bones, which fuse into 206 bones by adulthood.",
+      "ja": "人間の赤ちゃんは約300個の骨で生まれ、大人になるまでに206個に融合することをご存じでしたか？",
+      "ko": "인간의 아기는 약 300개의 뼈로 태어나서 성인이 될 때까지 206개로 융합된다는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250912-001",
+    "date": "2025-09-12",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的沙漠是撒哈拉沙漠，面積約900萬平方公里。",
+      "zh-CN": "你知道吗？地球上最大的沙漠是撒哈拉沙漠，面积约900万平方公里。",
+      "en": "Did you know? The largest hot desert on Earth is the Sahara Desert, covering about 9 million square kilometers.",
+      "ja": "地球上で最も大きな砂漠はサハラ砂漠で、面積は約900万平方キロメートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 사막은 사하라 사막으로, 면적이 약 900만 제곱킬로미터라는 사실을 알고 있었나요?"
+    }
+  },
+  {
+    "id": "20250913-001",
+    "date": "2025-09-13",
+    "translations": {
+      "zh-TW": "你知道嗎？人類的淚液有三種不同的類型：基礎淚液、反射淚液和情感淚液。",
+      "zh-CN": "你知道吗？人类的泪液有三种不同的类型：基础泪液、反射泪液和情感泪液。",
+      "en": "Did you know? Human tears come in three different types: basal, reflex, and emotional tears.",
+      "ja": "人間の涙には3つの異なるタイプがあることをご存じでしたか？基礎涙、反射涙、感情涙です。",
+      "ko": "인간의 눈물에는 세 가지 다른 유형이 있다는 사실을 알고 있었나요? 기초 눈물, 반사 눈물, 감정 눈물입니다."
+    }
+  },
+  {
+    "id": "20250914-001",
+    "date": "2025-09-14",
+    "translations": {
+      "zh-TW": "你知道嗎？地球上最大的峽谷是美國的大峽谷，長度446公里，深度1800公尺。",
+      "zh-CN": "你知道吗？地球上最大的峡谷是美国的大峡谷，长度446公里，深度1800米。",
+      "en": "Did you know? The largest canyon on Earth is the Grand Canyon in the US, 446 kilometers long and 1,800 meters deep.",
+      "ja": "地球上で最も大きな峡谷はアメリカのグランドキャニオンで、長さは446キロメートル、深さは1800メートルであることをご存じでしたか？",
+      "ko": "지구에서 가장 큰 협곡은 미국의 그랜드 캐니언으로, 길이가 446km, 깊이가 1800m라는 사실을 알고 있었나요?"
+    }
   }
 ]
