@@ -42,14 +42,30 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header Section */}
-      <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+      <header className="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white shadow-2xl relative overflow-hidden">
+        {/* Pixel art background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-sm"></div>
+          <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-sm"></div>
+          <div className="absolute bottom-4 left-4 w-2 h-2 bg-white rounded-sm"></div>
+          <div className="absolute bottom-4 right-4 w-2 h-2 bg-white rounded-sm"></div>
+          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-white rounded-sm"></div>
+          <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-white rounded-sm"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 relative">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
-              🌍 每日冷知識
+            <h1 className="group cursor-pointer inline-block transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/20">
+              <span className="inline-block font-mono font-black text-2xl sm:text-3xl lg:text-4xl tracking-wider mb-2 drop-shadow-lg">
+                📘 DAILY FACT ⭐️
+              </span>
+              <br />
+              <span className="inline-block font-mono font-black text-xl sm:text-2xl lg:text-3xl tracking-wider drop-shadow-lg">
+                🌍 每日冷知識 🎮
+              </span>
             </h1>
-            <p className="text-blue-100 text-sm sm:text-base lg:text-lg">
-              每天一則冷知識，讓生活更有趣
+            <p className="font-mono font-semibold text-blue-100 text-xs sm:text-sm lg:text-base mt-3 sm:mt-4 tracking-wide drop-shadow-md">
+              🎯 每天一則冷知識，讓生活更有趣 🎯
             </p>
           </div>
         </div>
