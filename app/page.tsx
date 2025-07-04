@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header Section */}
-      <header className="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white shadow-2xl relative overflow-hidden">
+      <header className="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white shadow-2xl relative overflow-hidden animate-fade-in-down">
         {/* Pixel art background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-sm"></div>
@@ -94,7 +94,7 @@ export default function Home() {
       </header>
 
       {/* Top Ad Zone */}
-      <section className="bg-yellow-100 border-b border-yellow-200">
+      <section className="bg-yellow-100 border-b border-yellow-200 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-yellow-200 border-2 border-dashed border-yellow-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
@@ -111,7 +111,7 @@ export default function Home() {
         <div className="grid gap-6 sm:gap-8 lg:gap-10">
           
           {/* Date and Metadata Row */}
-          <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
+          <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -127,7 +127,7 @@ export default function Home() {
           </section>
 
           {/* Main Fact Card */}
-          <section className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-400/20">
+          <section className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-400/20 animate-scale-in">
             {fact ? (
               <div className="flex flex-col">
                 {/* Card Header */}
@@ -204,7 +204,7 @@ export default function Home() {
           </section>
 
           {/* See You Tomorrow Section */}
-          <section className="bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-xl border border-purple-300 p-6 sm:p-8 lg:p-10 transform transition-all duration-700 animate-fade-in-up">
+          <section className="bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-xl border border-purple-300 p-6 sm:p-8 lg:p-10 transform transition-all duration-700 animate-fade-in-bottom">
             <div className="text-center text-white">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="text-2xl sm:text-3xl lg:text-4xl animate-bounce">🌙</span>
@@ -242,19 +242,19 @@ export default function Home() {
           <section className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6">
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               {/* Comments Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">💬</span>
                 <span>Comments</span>
               </button>
               
               {/* Bookmark Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl hover:from-yellow-600 hover:to-orange-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl hover:from-yellow-600 hover:to-orange-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                 <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">🔖</span>
                 <span>Bookmark</span>
               </button>
               
               {/* Share Button */}
-              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:from-green-600 hover:to-emerald-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <button className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl hover:from-green-600 hover:to-emerald-700 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 text-sm sm:text-base font-medium animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                 <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110">📤</span>
                 <span>Share</span>
               </button>
@@ -265,7 +265,7 @@ export default function Home() {
       </main>
 
       {/* Bottom Ad Zone */}
-      <section className="bg-purple-100 border-t border-purple-200">
+      <section className="bg-purple-100 border-t border-purple-200 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-purple-200 border-2 border-dashed border-purple-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
