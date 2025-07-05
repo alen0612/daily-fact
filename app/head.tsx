@@ -67,12 +67,7 @@ export default function HeadComponent() {
         <meta name="description" content={metadata.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        {/* Google AdSense 驗證程式碼 */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281401893626384"
-          crossOrigin="anonymous"
-        ></script>
+
         
         {/* Favicon 設定 */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
