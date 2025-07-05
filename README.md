@@ -76,7 +76,37 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 4. 點擊「驗證」按鈕
 5. 等待 Google 系統檢查您的網站
 
-### 4. 審核時間
+### 4. AdSense 驗證失敗的常見原因
+
+如果您遇到 AdSense 驗證失敗的問題，請檢查以下常見原因：
+
+#### 🔧 Next.js App Router 架構問題
+- **問題**：如果使用 Next.js App Router 架構，直接在 `app/head.tsx` 放 `<script>` 標籤並不會出現在最終的 HTML 中
+- **解決方案**：應改用 `next/script` 提供的 `<Script>` 元件來插入 AdSense 驗證碼
+
+```tsx
+import Script from 'next/script';
+
+// 在 head.tsx 中使用
+<Script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+  crossOrigin="anonymous"
+  strategy="afterInteractive"
+/>
+```
+
+#### 🚀 部署和驗證步驟
+1. 插入驗證碼後，記得重新部署網站
+2. 部署完成後，在 AdSense 後台按下「驗證」按鈕
+3. 確保驗證碼在網站原始碼中可見（可以按 F12 查看網頁原始碼）
+
+#### 📋 其他檢查項目
+- 確認 Publisher ID 是否正確
+- 確認網站是否正常運作且可公開訪問
+- 確認網站內容符合 AdSense 政策
+
+### 5. 審核時間
 
 - Google AdSense 審核通常需要 **1～3 個工作天**
 - 審核期間請確保網站正常運作
