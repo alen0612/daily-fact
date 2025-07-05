@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // 擴展 Window 介面以包含 adsbygoogle
 declare global {
@@ -14,9 +14,13 @@ interface GoogleAdProps {
   adStyle?: React.CSSProperties;
 }
 
+// 全域變數追蹤 script 是否已載入
+let scriptLoaded = false;
+let scriptLoading = false;
+
 const GoogleAd: React.FC<GoogleAdProps> = ({ adStyle }) => {
   const adRef = useRef<HTMLModElement>(null);
-  const scriptLoadedRef = useRef(false);
+  const [isAdInitialized, setIsAdInitialized] = useState(false);
 
   // 根據環境決定廣告單位 ID
   const getAdUnitId = (): string | null => {
@@ -30,19 +34,70 @@ const GoogleAd: React.FC<GoogleAdProps> = ({ adStyle }) => {
   };
 
   // 載入 Google AdSense script
-  const loadAdSenseScript = (): void => {
-    if (scriptLoadedRef.current) return;
+  const loadAdSenseScript = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      // 如果 script 已經載入，直接 resolve
+      if (scriptLoaded) {
+        resolve();
+        return;
+      }
 
-    const script = document.createElement('script');
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    
-    script.onload = () => {
-      scriptLoadedRef.current = true;
-    };
+      // 如果 script 正在載入中，等待載入完成
+      if (scriptLoading) {
+        const checkLoaded = setInterval(() => {
+          if (scriptLoaded) {
+            clearInterval(checkLoaded);
+            resolve();
+          }
+        }, 100);
+        return;
+      }
 
-    document.head.appendChild(script);
+      // 開始載入 script
+      scriptLoading = true;
+      
+      // 檢查是否已經存在 script 標籤
+      const existingScript = document.querySelector('script[src*="adsbygoogle.js"]');
+      if (existingScript) {
+        scriptLoaded = true;
+        scriptLoading = false;
+        resolve();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      
+      script.onload = () => {
+        scriptLoaded = true;
+        scriptLoading = false;
+        resolve();
+      };
+
+      script.onerror = () => {
+        scriptLoading = false;
+        reject(new Error('Failed to load Google AdSense script'));
+      };
+
+      document.head.appendChild(script);
+    });
+  };
+
+  // 初始化廣告
+  const initializeAd = (): void => {
+    if (!adRef.current || isAdInitialized) return;
+
+    try {
+      // 確保 window.adsbygoogle 存在
+      if (typeof window !== 'undefined' && window.adsbygoogle) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        setIsAdInitialized(true);
+      }
+    } catch (error) {
+      console.error('Failed to initialize Google Ad:', error);
+    }
   };
 
   useEffect(() => {
@@ -53,33 +108,22 @@ const GoogleAd: React.FC<GoogleAdProps> = ({ adStyle }) => {
       return;
     }
 
-    // 載入 AdSense script
-    loadAdSenseScript();
-
-    // 等待 script 載入完成後執行廣告
-    const initAd = (): void => {
-      if (adRef.current && window.adsbygoogle) {
-        try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (error) {
-          console.error('Failed to initialize Google Ad:', error);
-        }
+    // 載入 script 並初始化廣告
+    const setupAd = async (): Promise<void> => {
+      try {
+        await loadAdSenseScript();
+        
+        // 等待一小段時間確保 script 完全載入
+        setTimeout(() => {
+          initializeAd();
+        }, 100);
+      } catch (error) {
+        console.error('Failed to setup Google Ad:', error);
       }
     };
 
-    // 如果 script 已經載入，直接初始化廣告
-    if (scriptLoadedRef.current) {
-      initAd();
-    } else {
-      // 等待 script 載入完成
-      const checkScriptLoaded = setInterval(() => {
-        if (scriptLoadedRef.current) {
-          clearInterval(checkScriptLoaded);
-          initAd();
-        }
-      }, 100);
-    }
-  }, []);
+    setupAd();
+  }, [isAdInitialized]);
 
   const adUnitId = getAdUnitId();
 
@@ -94,7 +138,8 @@ const GoogleAd: React.FC<GoogleAdProps> = ({ adStyle }) => {
       className="adsbygoogle"
       style={{
         display: 'block',
-        textAlign: 'center',
+        width: '100%',
+        height: '90px',
         ...adStyle,
       }}
       data-ad-client="ca-pub-3940256099942544"
