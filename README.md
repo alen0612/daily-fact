@@ -76,24 +76,48 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 4. 點擊「驗證」按鈕
 5. 等待 Google 系統檢查您的網站
 
-### 4. AdSense 驗證失敗的常見原因
+### 4. AdSense 驗證注意事項
+
+#### 🔍 AdSense 驗證機制說明
+- **重要**：AdSense 的驗證機制是透過 bot 讀取 HTML 靜態內容，不會等待 JavaScript 載入
+- **問題**：使用 `<Script>` 或 `afterInteractive` 的方式，驗證時 script 可能無法被掃描到
+- **解決方案**：因此建議使用 `next/head` 提供的 `<Head>` 元件靜態插入驗證 `<script>`，確保出現在初始 HTML 中
+
+#### 📝 目前使用的驗證程式碼
+```tsx
+import Head from 'next/head';
+
+// 在 Head 元件中使用
+<Head>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281401893626384"
+    crossOrigin="anonymous"
+  ></script>
+</Head>
+```
+
+**注意**：`ca-pub-1281401893626384` 僅作為範例可見，實際使用時請替換為您的 Publisher ID。
+
+### 5. AdSense 驗證失敗的常見原因
 
 如果您遇到 AdSense 驗證失敗的問題，請檢查以下常見原因：
 
 #### 🔧 Next.js App Router 架構問題
 - **問題**：如果使用 Next.js App Router 架構，直接在 `app/head.tsx` 放 `<script>` 標籤並不會出現在最終的 HTML 中
-- **解決方案**：應改用 `next/script` 提供的 `<Script>` 元件來插入 AdSense 驗證碼
+- **解決方案**：應改用 `next/head` 提供的 `<Head>` 元件來插入 AdSense 驗證碼
 
 ```tsx
-import Script from 'next/script';
+import Head from 'next/head';
 
 // 在 head.tsx 中使用
-<Script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-  crossOrigin="anonymous"
-  strategy="afterInteractive"
-/>
+<Head>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+    crossOrigin="anonymous"
+  ></script>
+</Head>
 ```
 
 #### 🚀 部署和驗證步驟
@@ -106,7 +130,7 @@ import Script from 'next/script';
 - 確認網站是否正常運作且可公開訪問
 - 確認網站內容符合 AdSense 政策
 
-### 5. 審核時間
+### 6. 審核時間
 
 - Google AdSense 審核通常需要 **1～3 個工作天**
 - 審核期間請確保網站正常運作
