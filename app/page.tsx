@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getFactByDate, getRandomFact, Language } from '../src/utils/facts';
 import { useTranslation } from '../src/i18n/translations';
 import { getCurrentLanguage } from '../src/utils/language';
+import GoogleAd from '../src/components/GoogleAd';
 
 type Fact = {
   text: string;
@@ -180,9 +181,14 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-yellow-200 border-2 border-dashed border-yellow-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
-              <p className="text-sm sm:text-base lg:text-lg font-medium text-yellow-800">
-                {t('topAdZone')}
-              </p>
+              <GoogleAd 
+                adStyle={{
+                  height: '90px',
+                  width: '100%',
+                  maxWidth: '728px',
+                  margin: '0 auto'
+                }}
+              />
             </div>
           </div>
         </div>
@@ -290,9 +296,14 @@ export default function Home() {
                     {!fact.error && (
                       <div className="bg-green-100 border-2 border-dashed border-green-400 rounded-lg">
                         <div className="h-12 sm:h-16 lg:h-20 flex items-center justify-center">
-                          <p className="text-xs sm:text-sm lg:text-base font-medium text-green-800">
-                            {t('middleAdZone')}
-                          </p>
+                          <GoogleAd 
+                            adStyle={{
+                              height: '60px',
+                              width: '100%',
+                              maxWidth: '728px',
+                              margin: '0 auto'
+                            }}
+                          />
                         </div>
                       </div>
                     )}
@@ -390,9 +401,14 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-purple-200 border-2 border-dashed border-purple-400 rounded-lg">
             <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
-              <p className="text-sm sm:text-base lg:text-lg font-medium text-purple-800">
-                {t('bottomAdZone')}
-              </p>
+              <GoogleAd 
+                adStyle={{
+                  height: '90px',
+                  width: '100%',
+                  maxWidth: '728px',
+                  margin: '0 auto'
+                }}
+              />
             </div>
           </div>
         </div>
