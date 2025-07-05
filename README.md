@@ -35,6 +35,56 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+## 🚀 部署到 Vercel 並通過 Google 廣告審核
+
+### 1. 部署網站到 Vercel
+
+#### 方法一：GitHub 自動部署（推薦）
+1. 將專案推送到 GitHub 倉庫
+2. 前往 [Vercel](https://vercel.com) 並登入
+3. 點擊「New Project」
+4. 選擇您的 GitHub 倉庫
+5. 保持預設設定，點擊「Deploy」
+6. 部署完成後，Vercel 會自動為您分配一個域名（例如：`your-project.vercel.app`）
+
+#### 方法二：手動部署
+1. 安裝 Vercel CLI：`npm i -g vercel`
+2. 在專案根目錄執行：`vercel`
+3. 按照提示完成設定
+4. 部署完成後會得到一個域名
+
+### 2. 插入 Google AdSense 驗證程式碼
+
+在 `app/head.tsx` 檔案中，已經包含了 Google AdSense 的驗證程式碼：
+
+```tsx
+{/* Google AdSense 驗證程式碼 */}
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281401893626384"
+  crossOrigin="anonymous"
+></script>
+```
+
+如果您需要更換 Publisher ID，請將 `ca-pub-1281401893626384` 替換為您的 ID。
+
+### 3. 完成 Google AdSense 驗證
+
+1. 前往 [Google AdSense](https://www.google.com/adsense) 後台
+2. 在網站審核頁面中，找到您的網站
+3. **重要**：勾選「我已加入程式碼」選項
+4. 點擊「驗證」按鈕
+5. 等待 Google 系統檢查您的網站
+
+### 4. 審核時間
+
+- Google AdSense 審核通常需要 **1～3 個工作天**
+- 審核期間請確保網站正常運作
+- 如果 3 天後仍未通過，請檢查：
+  - 網站是否正常載入
+  - 驗證程式碼是否正確插入
+  - 網站內容是否符合 AdSense 政策
+
 ## 🧠 關於 facts.json
 
 所有冷知識資料都放在 `src/data/facts.json` 這個檔案裡，每一筆都要遵守以下規則：
