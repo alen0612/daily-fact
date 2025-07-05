@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Head from 'next/head';
 import "./globals.css";
 import LanguageProvider from "../src/components/LanguageProvider";
 
@@ -61,6 +62,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW">
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281401893626384"
+          crossOrigin="anonymous"
+        />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
