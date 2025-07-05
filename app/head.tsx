@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Script from 'next/script';
 import { Language } from '../src/i18n/translations';
 import { getCurrentLanguage, languageToOgLocale } from '../src/utils/language';
 
@@ -66,11 +67,12 @@ export default function Head() {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       
       {/* Google AdSense 驗證程式碼 */}
-      <script
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281401893626384"
         crossOrigin="anonymous"
-      ></script>
+        strategy="afterInteractive"
+      />
       
       {/* Favicon 設定 */}
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
